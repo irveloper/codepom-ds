@@ -1,0 +1,38 @@
+:root {
+  --cp-background: #0B132B;
+  --cp-foreground: #F8FAFC;
+  --cp-card: #08192E;
+  --cp-primary: #FBB040;
+  --cp-secondary: #1C2541;
+  --cp-accent: #00DFFF;
+  --cp-muted: #3A506B;
+  --cp-border: #1C2541;
+
+  --cp-navy-950: #08192E;
+  --cp-navy-900: #0B132B;
+  --cp-navy-800: #1C2541;
+  --cp-navy-700: #3A506B;
+
+  --cp-amber-400: #FBB040;
+  --cp-amber-500: #F59E0B;
+  --cp-amber-600: #EA580C;
+
+  --cp-cyan-400: #00DFFF;
+  --cp-cyan-500: #38BDF8;
+
+  --cp-ivory-50: #FDFCF0;
+  --cp-ivory-100: #F8FAFC;
+
+  --cp-success: #4ADE80;
+  --cp-warning: #FB923C;
+  --cp-error: #F87171;
+
+  --cp-radius-sm: 6px;
+  --cp-radius-md: 8px;
+  --cp-radius-lg: 12px;
+  --cp-radius-xl: 14px;
+  --cp-radius-full: 9999px;
+
+  --cp-font-sans: "Space Grotesk", sans-serif;
+  --cp-font-mono: "Space Mono", monospace;
+}

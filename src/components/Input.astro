@@ -1,0 +1,27 @@
+---
+interface Props {
+  label?: string;
+  value?: string;
+  placeholder?: string;
+  hint?: string;
+  type?: string;
+  class?: string;
+  id?: string;
+}
+
+const { label, value, placeholder = '', hint, type = 'text', id } = Astro.props;
+const inputId = id || `input-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div class="flex flex-col gap-[7px]">
+  {label && <label for={inputId} class="text-[13px] font-semibold">{label}</label>}
+  <input
+    {type}
+    id={inputId}
+    value={value}
+    placeholder={placeholder}
+    class="w-full font-mono text-[14px] bg-navy-900 border border-navy-800 rounded-[8px] px-[12px] py-[10px] text-foreground outline-none transition-all duration-100 focus:border-cyan-400 focus:shadow-[0_0_0_3px_rgba(0,223,255,0.15)]"
+    class:list={[Astro.props.class]}
+  />
+  {hint && <span class="text-[12px] text-muted">{hint}</span>}
+</div>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  checked?: boolean;
+  label?: string;
+  hint?: string;
+  class?: string;
+  id?: string;
+}
+
+const { checked = false, label, hint, id } = Astro.props;
+const inputId = id || `toggle-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div class="flex items-center justify-between" class:list={[Astro.props.class]}>
+  <div>
+    {label && <div class="text-[13px] font-semibold">{label}</div>}
+    {hint && <div class="text-[12px] text-muted mt-[2px]">{hint}</div>}
+  </div>
+  <span
+    class="w-[42px] h-[24px] rounded-full relative inline-block transition-all duration-100 cursor-pointer"
+    class:list={[checked ? 'bg-amber-400' : 'bg-navy-800']}
+  >
+    <span
+      class="absolute top-[3px] w-[18px] h-[18px] rounded-full transition-all duration-100"
+      class:list={[checked ? 'right-[3px] bg-navy-950' : 'left-[3px] bg-muted']}
+    />
+  </span>
+</div>

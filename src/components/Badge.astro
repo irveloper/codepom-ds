@@ -1,0 +1,48 @@
+---
+export type BadgeVariant = 'primary' | 'accent' | 'secondary' | 'outline' | 'warning';
+
+interface Props {
+  variant?: BadgeVariant;
+  dot?: boolean;
+  icon?: boolean;
+  mono?: boolean;
+  class?: string;
+}
+
+const { variant = 'primary', dot = false, icon = false, mono = false } = Astro.props;
+
+const variantStyles: Record<BadgeVariant, string> = {
+  primary: 'bg-amber-400 text-navy-950',
+  accent: 'bg-cyan-400 text-navy-950',
+  secondary: 'bg-navy-800 text-foreground',
+  outline: 'bg-transparent border border-navy-700 text-muted',
+  warning: 'bg-[rgba(234,88,12,0.18)] text-warning',
+};
+
+const dotColors: Record<BadgeVariant, string> = {
+  primary: '#4ADE80',
+  accent: '#FBB040',
+  secondary: '#4ADE80',
+  outline: '#94A3B8',
+  warning: '#FBB040',
+};
+---
+
+<span
+  class={variantStyles[variant] + ' inline-flex items-center gap-[6px] text-[12px] font-semibold px-[11px] py-[4px] font-sans'}
+  class:list={[
+    mono ? 'font-mono text-[11px] bg-navy-900 border border-navy-800 text-muted rounded-[6px]' : 'rounded-full',
+    Astro.props.class,
+  ]}
+>
+  {dot && !icon && (
+    <span class="w-[7px] h-[7px] rounded-full" style={{ backgroundColor: dotColors[variant] }} />
+  )}
+  {icon && variant === 'accent' && (
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+  )}
+  {icon && variant === 'warning' && (
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"></path></svg>
+  )}
+  <slot />
+</span>

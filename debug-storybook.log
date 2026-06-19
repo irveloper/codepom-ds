@@ -1,0 +1,33 @@
+[12:13:12.600] [INFO] storybook v10.4.6
+[12:13:14.278] [DEBUG] Getting package.json info for /Users/irveloper/Downloads/Design system creation/codepom-design-system/package.json...
+[12:13:14.441] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
+[12:13:14.473] [INFO] Starting...
+[12:13:14.585] [DEBUG] Starting preview..
+[12:13:15.401] [WARN] 🚨 Unable to index ./src/stories/FormControls.stories.ts:
+  NoMetaError: CSF: missing default export /Users/irveloper/Downloads/Design system creation/codepom-design-system/src/stories/FormControls.stories.ts (line 1, col 0)
+
+More info: https://storybook.js.org/docs/writing-stories?ref=error#default-export
+    at CsfFile.parse (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/_node-chunks/chunk-X45RZLRZ.js:456:13)
+    at Object.createIndex (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/presets/common-preset.js:1656:154)
+    at async _StoryIndexGenerator.extractStories (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:19293:23)
+    at async file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:19214:39
+    at async Promise.all (index 5)
+    at async Promise.all (index 0)
+    at async _StoryIndexGenerator.updateExtracted (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:19202:5)
+    at async _StoryIndexGenerator.ensureExtracted (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:19237:5)
+    at async _StoryIndexGenerator.initialize (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:19198:5)
+    at async file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/presets/common-preset.js:1694:10
+[12:13:15.406] [ERROR] Failed to build the preview
+[12:13:15.408] [ERROR] Error: Unable to index ./src/stories/FormControls.stories.ts
+    at _StoryIndexGenerator.getIndexAndStats (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:19468:15)
+    at async _StoryIndexGenerator.getIndex (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:19457:13)
+    at async BasicMinimalPluginContext.config (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/@storybook+builder-vite@10.4.6_esbuild@0.27.7_rollup@4.62.2_storybook@10.4.6_@testing-l_fef71147bdc4b3d1edd66318b826d868/node_modules/@storybook/builder-vite/dist/_node-chunks/chunk-KJIVQEGR.js:188:19)
+    at async runConfigHook (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/vite@7.3.5_@types+node@20.19.43_jiti@2.7.0_lightningcss@1.32.0/node_modules/vite/dist/node/chunks/config.js:36023:15)
+    at async resolveConfig (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/vite@7.3.5_@types+node@20.19.43_jiti@2.7.0_lightningcss@1.32.0/node_modules/vite/dist/node/chunks/config.js:35525:13)
+    at async _createServer (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/vite@7.3.5_@types+node@20.19.43_jiti@2.7.0_lightningcss@1.32.0/node_modules/vite/dist/node/chunks/config.js:25441:67)
+    at async Module.start (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/@storybook+builder-vite@10.4.6_esbuild@0.27.7_rollup@4.62.2_storybook@10.4.6_@testing-l_fef71147bdc4b3d1edd66318b826d868/node_modules/@storybook/builder-vite/dist/index.js:1606:17)
+    at async storybookDevServer (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:11496:158)
+    at async buildOrThrow (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:8205:12)
+    at async buildDevStandalone (file:///Users/irveloper/Downloads/Design%20system%20creation/codepom-design-system/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_react-dom@19.2.7_react@19.2.7__react@19.2.7/node_modules/storybook/dist/core-server/index.js:12057:41)
+[12:13:15.409] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
