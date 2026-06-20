@@ -1,0 +1,1 @@
+import{P as t}from"./_astro-stub-JVWANnFD.js";const a={title:"Foundations/Background Pattern",component:t},e={};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:"{}",...e.parameters?.docs?.source}}};const o=["Default"];export{e as Default,o as __namedExportsOrder,a as default};

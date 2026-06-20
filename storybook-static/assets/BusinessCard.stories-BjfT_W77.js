@@ -1,0 +1,1 @@
+import{P as r}from"./_astro-stub-JVWANnFD.js";const a={title:"Applications/Business Card",component:r},e={};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:"{}",...e.parameters?.docs?.source}}};const s=["Default"];export{e as Default,s as __namedExportsOrder,a as default};
