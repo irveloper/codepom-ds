@@ -1,13 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Mascot from '../components/Mascot.astro';
-import BrandPrinciples from '../components/BrandPrinciples.astro';
-import Pattern from '../components/Pattern.astro';
-import { Button } from '../../packages/react/src/components/Button';
-import { Badge } from '../../packages/react/src/components/Badge';
-import { Card, CardBody } from '../../packages/react/src/components/Card';
-import { Field, Input, Select } from '../../packages/react/src/components/Input';
-import { Alert } from '../../packages/react/src/components/Alert';
+import {
+  Mascot,
+  BrandPrinciples,
+  Pattern,
+  Button,
+  Badge,
+  Card,
+  CardBody,
+  Alert,
+  Field,
+  Label,
+  Input,
+  Select,
+} from '@codepom/react';
 ---
 
 <Layout>
@@ -38,7 +44,7 @@ import { Alert } from '../../packages/react/src/components/Alert';
 
       <div class="mb-6">
         <Alert variant="info" title="React-powered">
-          All UI components now come from <code>@codepom/react</code> — the same package consumed by Next.js, plain React, and this Astro site.
+          All UI components come from <code>@codepom/react</code> — the same package consumed by Next.js, plain React, and this Astro site.
         </Alert>
       </div>
 
@@ -48,7 +54,7 @@ import { Alert } from '../../packages/react/src/components/Alert';
           <Button variant="primary" size="md">npm run storybook</Button>
           <Button variant="secondary" size="md">npm run dev</Button>
           <Button variant="ghost" size="md">Read the docs</Button>
-          <Button variant="danger" size="md">Danger</Button>
+          <Button variant="destructive" size="md">Danger</Button>
           <Badge variant="primary">Storybook</Badge>
           <Badge variant="info">Astro 6</Badge>
           <Badge variant="success">Live</Badge>
@@ -117,11 +123,13 @@ import { Alert } from '../../packages/react/src/components/Alert';
         <h2 class="font-mono text-[14px] text-muted tracking-widest mb-3.5">SAMPLE FORM</h2>
         <div class="border border-navy-800 rounded-[12px] bg-card p-6">
           <div class="grid grid-cols-2 gap-4 mb-4">
-            <Field label="Project name" htmlFor="proj-name" hint="Lowercase, hyphenated.">
-              <Input id="proj-name" defaultValue="codepom-web" />
+            <Field hint="Lowercase, hyphenated.">
+              <Label>Project name</Label>
+              <Input defaultValue="codepom-web" type="text" />
             </Field>
-            <Field label="Stack" htmlFor="proj-stack">
-              <Select id="proj-stack">
+            <Field>
+              <Label>Stack</Label>
+              <Select>
                 <option>Next.js + Tailwind</option>
                 <option selected>Astro</option>
                 <option>Remix</option>
