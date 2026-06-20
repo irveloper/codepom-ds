@@ -5,35 +5,54 @@
   "type": "module",
   "exports": {
     ".": {
-      "types":   "./dist/index.d.ts",
-      "import":  "./dist/index.mjs",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
     "./styles": "./dist/styles.css"
   },
-  "main":  "./dist/index.cjs",
-  "module":"./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
-  "sideEffects": ["*.css"],
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "build": "tsup && cp src/styles.css dist/styles.css",
-    "dev":   "tsup --watch",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
-    "react":     ">=18",
+    "react": ">=18",
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "@types/react":     "^18.3.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
-    "react":            "^18.3.0",
-    "react-dom":        "^18.3.0",
-    "tsup":             "^8.0.0",
-    "typescript":       "^5.4.0"
+    "@vitest/coverage-v8": "^4.1.9",
+    "jsdom": "^29.1.1",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.9"
   },
-  "keywords": ["react", "design-system", "codepom", "components", "ui"],
+  "keywords": [
+    "react",
+    "design-system",
+    "codepom",
+    "components",
+    "ui"
+  ],
   "license": "MIT",
   "publishConfig": {
     "access": "public",

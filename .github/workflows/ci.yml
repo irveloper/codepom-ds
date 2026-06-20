@@ -26,6 +26,9 @@ jobs:
       - name: Type-check
         run: pnpm --filter @codepom/react exec tsc --noEmit
 
+      - name: Test
+        run: pnpm --filter @codepom/react test
+
       - name: Build packages
         run: pnpm build:packages
 
