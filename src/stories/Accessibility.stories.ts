@@ -116,38 +116,38 @@ export const ReducedMotion: StoryObj = {
   parameters: { layout: 'centered' },
   render: () => `
     <style>
-      @keyframes cp-spin { to { transform: rotate(360deg); } }
-      @keyframes cp-pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-      .cp-spin-demo { animation: cp-spin 1s linear infinite; }
-      .cp-pulse-demo { animation: cp-pulse 1.5s ease-in-out infinite; }
+      @keyframes pom-spin { to { transform: rotate(360deg); } }
+      @keyframes pom-pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+      .pom-spin-demo { animation: pom-spin 1s linear infinite; }
+      .pom-pulse-demo { animation: pom-pulse 1.5s ease-in-out infinite; }
       @media (prefers-reduced-motion: reduce) {
-        .cp-spin-demo, .cp-pulse-demo { animation: none !important; }
-        .cp-motion-status { color: #4ADE80 !important; }
-        .cp-motion-status::before { content: '✓ '; }
-        .cp-motion-status-off { display: none !important; }
+        .pom-spin-demo, .pom-pulse-demo { animation: none !important; }
+        .pom-motion-status { color: #4ADE80 !important; }
+        .pom-motion-status::before { content: '✓ '; }
+        .pom-motion-status-off { display: none !important; }
       }
     </style>
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;padding:40px;border-radius:16px;min-width:480px;">
       <p style="font-family:'Space Mono',monospace;font-size:11px;color:#3A506B;letter-spacing:0.06em;margin:0 0 24px;">REDUCED MOTION DEMO</p>
 
-      <p class="cp-motion-status-off" style="font-size:13px;color:#FB923C;margin:0 0 16px;">
+      <p class="pom-motion-status-off" style="font-size:13px;color:#FB923C;margin:0 0 16px;">
         ⚠ prefers-reduced-motion: no-preference — animations active
       </p>
-      <p class="cp-motion-status" style="font-size:13px;color:#3A506B;margin:0 0 24px;">
+      <p class="pom-motion-status" style="font-size:13px;color:#3A506B;margin:0 0 24px;">
         prefers-reduced-motion: reduce — animations disabled
       </p>
 
       <div style="display:flex;align-items:center;gap:24px;margin-bottom:32px;">
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-          <div class="cp-spin-demo" style="width:36px;height:36px;border:3px solid #1C2541;border-top-color:#FBB040;border-radius:50%;"></div>
+          <div class="pom-spin-demo" style="width:36px;height:36px;border:3px solid #1C2541;border-top-color:#FBB040;border-radius:50%;"></div>
           <span style="font-size:12px;color:#64748B;">Spinner</span>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-          <div class="cp-pulse-demo" style="width:100px;height:16px;background:#1C2541;border-radius:4px;"></div>
+          <div class="pom-pulse-demo" style="width:100px;height:16px;background:#1C2541;border-radius:4px;"></div>
           <span style="font-size:12px;color:#64748B;">Skeleton</span>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-          <div style="width:8px;height:8px;border-radius:50%;background:#4ADE80;" class="cp-pulse-demo"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#4ADE80;" class="pom-pulse-demo"></div>
           <span style="font-size:12px;color:#64748B;">Status dot</span>
         </div>
       </div>

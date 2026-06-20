@@ -39,7 +39,7 @@ describe('Tooltip', () => {
         <button>btn</button>
       </Tooltip>
     )
-    expect(document.querySelector(`.cp-tooltip--${placement}`)).toBeInTheDocument()
-    expect(document.querySelector(`.cp-tooltip-host--${placement}`)).toBeInTheDocument()
+    expect(document.querySelector(`.pom-tooltip--${placement}`)).toBeInTheDocument()
+    expect(document.querySelector(`.pom-tooltip-host--${placement}`)).toBeInTheDocument()
   })
 })

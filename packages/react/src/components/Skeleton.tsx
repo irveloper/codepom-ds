@@ -17,11 +17,11 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 }) => {
   if (lines != null && lines > 1) {
     return (
-      <div className={`cp-skeleton-lines ${className}`.trim()}>
+      <div className={`pom-skeleton-lines ${className}`.trim()}>
         {Array.from({ length: lines }).map((_, i) => (
           <span
             key={i}
-            className="cp-skeleton cp-skeleton--pulse"
+            className="pom-skeleton pom-skeleton--pulse"
             style={{
               display: 'block',
               width: i === lines - 1 ? '65%' : width ?? '100%',
@@ -36,7 +36,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 
   return (
     <span
-      className={['cp-skeleton', 'cp-skeleton--pulse', className].filter(Boolean).join(' ')}
+      className={['pom-skeleton', 'pom-skeleton--pulse', className].filter(Boolean).join(' ')}
       style={{
         display: 'block',
         width: width ?? '100%',
@@ -53,11 +53,11 @@ export interface SkeletonTextProps {
 }
 
 export const SkeletonText: React.FC<SkeletonTextProps> = ({ lines = 3, className = '' }) => (
-  <div className={`cp-skeleton-lines ${className}`.trim()} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+  <div className={`pom-skeleton-lines ${className}`.trim()} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
     {Array.from({ length: lines }).map((_, i) => (
       <span
         key={i}
-        className="cp-skeleton cp-skeleton--pulse"
+        className="pom-skeleton pom-skeleton--pulse"
         style={{
           display: 'block',
           width: i === lines - 1 ? '60%' : '100%',
@@ -71,10 +71,10 @@ export const SkeletonText: React.FC<SkeletonTextProps> = ({ lines = 3, className
 
 export const SkeletonCard: React.FC<{ className?: string }> = ({ className = '' }) => (
   <div
-    className={`cp-skeleton-card ${className}`.trim()}
+    className={`pom-skeleton-card ${className}`.trim()}
     style={{
-      background: 'var(--cp-card)',
-      border: '1px solid var(--cp-border)',
+      background: 'var(--pom-card)',
+      border: '1px solid var(--pom-border)',
       borderRadius: 12,
       padding: 24,
       display: 'flex',
@@ -84,16 +84,16 @@ export const SkeletonCard: React.FC<{ className?: string }> = ({ className = '' 
   >
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <span
-        className="cp-skeleton cp-skeleton--pulse"
+        className="pom-skeleton pom-skeleton--pulse"
         style={{ display: 'block', width: 40, height: 40, borderRadius: 9999, flexShrink: 0 }}
       />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
         <span
-          className="cp-skeleton cp-skeleton--pulse"
+          className="pom-skeleton pom-skeleton--pulse"
           style={{ display: 'block', width: '60%', height: 14, borderRadius: 4 }}
         />
         <span
-          className="cp-skeleton cp-skeleton--pulse"
+          className="pom-skeleton pom-skeleton--pulse"
           style={{ display: 'block', width: '40%', height: 12, borderRadius: 4 }}
         />
       </div>
@@ -101,11 +101,11 @@ export const SkeletonCard: React.FC<{ className?: string }> = ({ className = '' 
     <SkeletonText lines={3} />
     <div style={{ display: 'flex', gap: 8 }}>
       <span
-        className="cp-skeleton cp-skeleton--pulse"
+        className="pom-skeleton pom-skeleton--pulse"
         style={{ display: 'block', width: 80, height: 32, borderRadius: 6 }}
       />
       <span
-        className="cp-skeleton cp-skeleton--pulse"
+        className="pom-skeleton pom-skeleton--pulse"
         style={{ display: 'block', width: 80, height: 32, borderRadius: 6 }}
       />
     </div>

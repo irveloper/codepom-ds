@@ -28,10 +28,10 @@ export const Pagination: React.FC<PaginationProps> = ({
   return (
     <nav
       aria-label="Pagination"
-      className={`cp-pagination ${className}`.trim()}
+      className={`pom-pagination ${className}`.trim()}
     >
       <button
-        className="cp-pagination__btn cp-pagination__btn--prev"
+        className="pom-pagination__btn pom-pagination__btn--prev"
         onClick={() => onChange(page - 1)}
         disabled={page <= 1}
         aria-label="Previous page"
@@ -41,15 +41,15 @@ export const Pagination: React.FC<PaginationProps> = ({
 
       {pages.map((p, i) =>
         p === '…' ? (
-          <span key={`ellipsis-${i}`} className="cp-pagination__ellipsis" aria-hidden="true">
+          <span key={`ellipsis-${i}`} className="pom-pagination__ellipsis" aria-hidden="true">
             …
           </span>
         ) : (
           <button
             key={p}
             className={[
-              'cp-pagination__btn',
-              p === page ? 'cp-pagination__btn--active' : '',
+              'pom-pagination__btn',
+              p === page ? 'pom-pagination__btn--active' : '',
             ]
               .filter(Boolean)
               .join(' ')}
@@ -63,7 +63,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       )}
 
       <button
-        className="cp-pagination__btn cp-pagination__btn--next"
+        className="pom-pagination__btn pom-pagination__btn--next"
         onClick={() => onChange(page + 1)}
         disabled={page >= totalPages}
         aria-label="Next page"

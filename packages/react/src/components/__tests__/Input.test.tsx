@@ -13,13 +13,13 @@ describe('Input', () => {
   it('applies error class and aria-invalid when error', () => {
     render(<Input error aria-label="field" />)
     const input = screen.getByRole('textbox')
-    expect(input).toHaveClass('cp-input--error')
+    expect(input).toHaveClass('pom-input--error')
     expect(input).toHaveAttribute('aria-invalid', 'true')
   })
 
   it('applies size class', () => {
     render(<Input inputSize="lg" aria-label="field" />)
-    expect(screen.getByRole('textbox')).toHaveClass('cp-input--lg')
+    expect(screen.getByRole('textbox')).toHaveClass('pom-input--lg')
   })
 
   it('is disabled when disabled prop set', () => {
@@ -50,7 +50,7 @@ describe('Textarea', () => {
   it('applies error class and aria-invalid', () => {
     render(<Textarea error aria-label="notes" />)
     const el = screen.getByRole('textbox')
-    expect(el).toHaveClass('cp-textarea--error')
+    expect(el).toHaveClass('pom-textarea--error')
     expect(el).toHaveAttribute('aria-invalid', 'true')
   })
 
@@ -75,7 +75,7 @@ describe('Select', () => {
 
   it('applies error class and aria-invalid', () => {
     render(<Select error aria-label="pick one"><option>x</option></Select>)
-    expect(screen.getByRole('combobox')).toHaveClass('cp-select--error')
+    expect(screen.getByRole('combobox')).toHaveClass('pom-select--error')
     expect(screen.getByRole('combobox')).toHaveAttribute('aria-invalid', 'true')
   })
 

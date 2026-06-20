@@ -26,11 +26,11 @@ const preset = {
         sm: '6px', md: '8px', lg: '12px', xl: '14px',
       },
       boxShadow: {
-        'cp-1': '0 1px 2px 0 rgba(5,10,24,0.4)',
-        'cp-2': '0 2px 8px 0 rgba(5,10,24,0.5), 0 1px 2px 0 rgba(5,10,24,0.3)',
-        'cp-3': '0 4px 16px 0 rgba(5,10,24,0.6), 0 2px 4px 0 rgba(5,10,24,0.3)',
-        'cp-4': '0 8px 32px 0 rgba(5,10,24,0.7), 0 4px 8px 0 rgba(5,10,24,0.4)',
-        'cp-5': '0 16px 48px 0 rgba(5,10,24,0.8), 0 8px 16px 0 rgba(5,10,24,0.5)',
+        'pom-1': '0 1px 2px 0 rgba(5,10,24,0.4)',
+        'pom-2': '0 2px 8px 0 rgba(5,10,24,0.5), 0 1px 2px 0 rgba(5,10,24,0.3)',
+        'pom-3': '0 4px 16px 0 rgba(5,10,24,0.6), 0 2px 4px 0 rgba(5,10,24,0.3)',
+        'pom-4': '0 8px 32px 0 rgba(5,10,24,0.7), 0 4px 8px 0 rgba(5,10,24,0.4)',
+        'pom-5': '0 16px 48px 0 rgba(5,10,24,0.8), 0 8px 16px 0 rgba(5,10,24,0.5)',
       },
       spacing: {
         1: '4px', 2: '8px', 3: '12px', 4: '16px', 5: '20px',

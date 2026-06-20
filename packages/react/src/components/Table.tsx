@@ -24,9 +24,9 @@ export const Table: React.FC<TableProps> = ({
   className = '',
 }) => {
   const classes = [
-    'cp-table',
-    striped ? 'cp-table--striped' : '',
-    hoverable ? 'cp-table--hoverable' : '',
+    'pom-table',
+    striped ? 'pom-table--striped' : '',
+    hoverable ? 'pom-table--hoverable' : '',
     className,
   ]
     .filter(Boolean)
@@ -35,14 +35,14 @@ export const Table: React.FC<TableProps> = ({
   const skeletonRows = Array.from({ length: 5 })
 
   return (
-    <div className="cp-table-wrapper">
+    <div className="pom-table-wrapper">
       <table className={classes}>
-        <thead className="cp-table__head">
+        <thead className="pom-table__head">
           <tr>
             {columns.map((col) => (
               <th
                 key={col.key}
-                className="cp-table__th"
+                className="pom-table__th"
                 style={col.width != null ? { width: col.width } : undefined}
               >
                 {col.label}
@@ -50,21 +50,21 @@ export const Table: React.FC<TableProps> = ({
             ))}
           </tr>
         </thead>
-        <tbody className="cp-table__body">
+        <tbody className="pom-table__body">
           {loading
             ? skeletonRows.map((_, i) => (
-                <tr key={i} className="cp-table__row">
+                <tr key={i} className="pom-table__row">
                   {columns.map((col) => (
-                    <td key={col.key} className="cp-table__td">
-                      <span className="cp-skeleton cp-skeleton--pulse" style={{ display: 'block', height: 16, borderRadius: 4 }} />
+                    <td key={col.key} className="pom-table__td">
+                      <span className="pom-skeleton pom-skeleton--pulse" style={{ display: 'block', height: 16, borderRadius: 4 }} />
                     </td>
                   ))}
                 </tr>
               ))
             : rows.map((row, i) => (
-                <tr key={i} className="cp-table__row">
+                <tr key={i} className="pom-table__row">
                   {columns.map((col) => (
-                    <td key={col.key} className="cp-table__td">
+                    <td key={col.key} className="pom-table__td">
                       {row[col.key]}
                     </td>
                   ))}

@@ -39,17 +39,17 @@ describe('Table', () => {
 
   it('applies striped class', () => {
     render(<Table columns={columns} rows={rows} striped />)
-    expect(document.querySelector('.cp-table--striped')).toBeInTheDocument()
+    expect(document.querySelector('.pom-table--striped')).toBeInTheDocument()
   })
 
   it('applies hoverable class', () => {
     render(<Table columns={columns} rows={rows} hoverable />)
-    expect(document.querySelector('.cp-table--hoverable')).toBeInTheDocument()
+    expect(document.querySelector('.pom-table--hoverable')).toBeInTheDocument()
   })
 
   it('shows skeleton rows when loading', () => {
     render(<Table columns={columns} rows={[]} loading />)
-    expect(document.querySelectorAll('.cp-skeleton').length).toBeGreaterThan(0)
+    expect(document.querySelectorAll('.pom-skeleton').length).toBeGreaterThan(0)
     expect(screen.queryByText('Maya Chen')).not.toBeInTheDocument()
   })
 

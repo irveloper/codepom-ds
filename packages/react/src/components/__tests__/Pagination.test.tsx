@@ -60,11 +60,11 @@ describe('Pagination', () => {
     for (let i = 1; i <= 5; i++) {
       expect(screen.getByRole('button', { name: `Page ${i}` })).toBeInTheDocument()
     }
-    expect(document.querySelectorAll('.cp-pagination__ellipsis')).toHaveLength(0)
+    expect(document.querySelectorAll('.pom-pagination__ellipsis')).toHaveLength(0)
   })
 
   it('shows ellipsis for large page counts', () => {
     setup({ total: 200, page: 5, perPage: 10 })
-    expect(document.querySelectorAll('.cp-pagination__ellipsis').length).toBeGreaterThan(0)
+    expect(document.querySelectorAll('.pom-pagination__ellipsis').length).toBeGreaterThan(0)
   })
 })

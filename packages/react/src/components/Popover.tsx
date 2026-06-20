@@ -41,13 +41,13 @@ export const Popover: React.FC<PopoverProps> = ({
   return (
     <div
       ref={wrapperRef}
-      className={['cp-popover-host', `cp-popover-host--${placement}`, className]
+      className={['pom-popover-host', `pom-popover-host--${placement}`, className]
         .filter(Boolean)
         .join(' ')}
       style={{ position: 'relative', display: 'inline-flex' }}
     >
       <div
-        className="cp-popover-trigger"
+        className="pom-popover-trigger"
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         aria-controls={id}
@@ -59,7 +59,7 @@ export const Popover: React.FC<PopoverProps> = ({
         <div
           id={id}
           role="dialog"
-          className={['cp-popover', `cp-popover--${placement}`].join(' ')}
+          className={['pom-popover', `pom-popover--${placement}`].join(' ')}
         >
           {children}
         </div>

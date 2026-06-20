@@ -1,89 +1,89 @@
 :root {
   /* ── Brand palette ──────────────────────────────────────────────── */
-  --cp-navy-950: #08192E;
-  --cp-navy-900: #0B132B;
-  --cp-navy-800: #1C2541;
-  --cp-navy-700: #3A506B;  /* borders & decorative only */
+  --pom-navy-950: #08192E;
+  --pom-navy-900: #0B132B;
+  --pom-navy-800: #1C2541;
+  --pom-navy-700: #3A506B;  /* borders & decorative only */
 
-  --cp-amber-400: #FBB040;
-  --cp-amber-500: #F59E0B;
-  --cp-amber-600: #EA580C;
+  --pom-amber-400: #FBB040;
+  --pom-amber-500: #F59E0B;
+  --pom-amber-600: #EA580C;
 
-  --cp-cyan-400:  #00DFFF;
-  --cp-cyan-500:  #38BDF8;
+  --pom-cyan-400:  #00DFFF;
+  --pom-cyan-500:  #38BDF8;
 
-  --cp-ivory-50:  #FDFCF0;
-  --cp-ivory-100: #F8FAFC;
+  --pom-ivory-50:  #FDFCF0;
+  --pom-ivory-100: #F8FAFC;
 
   /* ── Semantic colors ────────────────────────────────────────────── */
-  --cp-background: #0B132B;
-  --cp-foreground: #F8FAFC;
-  --cp-card:       #08192E;
-  --cp-primary:    #FBB040;
-  --cp-secondary:  #1C2541;
-  --cp-accent:     #00DFFF;
-  --cp-border:     #1C2541;
+  --pom-background: #0B132B;
+  --pom-foreground: #F8FAFC;
+  --pom-card:       #08192E;
+  --pom-primary:    #FBB040;
+  --pom-secondary:  #1C2541;
+  --pom-accent:     #00DFFF;
+  --pom-border:     #1C2541;
 
   /* ── Feedback ───────────────────────────────────────────────────── */
-  --cp-success: #4ADE80;
-  --cp-warning: #FB923C;
-  --cp-error:   #F87171;
+  --pom-success: #4ADE80;
+  --pom-warning: #FB923C;
+  --pom-error:   #F87171;
 
-  /* ── Accessible text scale (WCAG AA on --cp-navy-900) ──────────── */
-  --cp-text-primary:    #F8FAFC;  /* 17.6:1 — body, headings          */
-  --cp-text-secondary:  #94A3B8;  /*  7.2:1 — labels, captions        */
-  --cp-text-tertiary:   #64748B;  /*  3.9:1 — large text / decorative */
-  --cp-text-on-primary: #0B132B;  /* text on amber/cyan surfaces       */
+  /* ── Accessible text scale (WCAG AA on --pom-navy-900) ──────────── */
+  --pom-text-primary:    #F8FAFC;  /* 17.6:1 — body, headings          */
+  --pom-text-secondary:  #94A3B8;  /*  7.2:1 — labels, captions        */
+  --pom-text-tertiary:   #64748B;  /*  3.9:1 — large text / decorative */
+  --pom-text-on-primary: #0B132B;  /* text on amber/cyan surfaces       */
 
   /* ── Typography ─────────────────────────────────────────────────── */
-  --cp-font-sans: "Space Grotesk", system-ui, sans-serif;
-  --cp-font-mono: "Space Mono", "Courier New", monospace;
+  --pom-font-sans: "Space Grotesk", system-ui, sans-serif;
+  --pom-font-mono: "Space Mono", "Courier New", monospace;
 
   /* ── Border radius ───────────────────────────────────────────────── */
-  --cp-radius-sm:   6px;
-  --cp-radius-md:   8px;
-  --cp-radius-lg:   12px;
-  --cp-radius-xl:   14px;
-  --cp-radius-full: 9999px;
+  --pom-radius-sm:   6px;
+  --pom-radius-md:   8px;
+  --pom-radius-lg:   12px;
+  --pom-radius-xl:   14px;
+  --pom-radius-full: 9999px;
 
   /* ── Spacing — 8pt grid ──────────────────────────────────────────── */
-  --cp-space-0:  0px;
-  --cp-space-1:  4px;
-  --cp-space-2:  8px;
-  --cp-space-3:  12px;
-  --cp-space-4:  16px;
-  --cp-space-5:  20px;
-  --cp-space-6:  24px;
-  --cp-space-8:  32px;
-  --cp-space-10: 40px;
-  --cp-space-12: 48px;
-  --cp-space-16: 64px;
-  --cp-space-20: 80px;
-  --cp-space-24: 96px;
+  --pom-space-0:  0px;
+  --pom-space-1:  4px;
+  --pom-space-2:  8px;
+  --pom-space-3:  12px;
+  --pom-space-4:  16px;
+  --pom-space-5:  20px;
+  --pom-space-6:  24px;
+  --pom-space-8:  32px;
+  --pom-space-10: 40px;
+  --pom-space-12: 48px;
+  --pom-space-16: 64px;
+  --pom-space-20: 80px;
+  --pom-space-24: 96px;
 
   /* ── Elevation — navy-tinted shadows ────────────────────────────── */
-  --cp-shadow-0: none;
-  --cp-shadow-1: 0 1px 2px 0 rgba(5,10,24,0.4);
-  --cp-shadow-2: 0 2px 8px 0 rgba(5,10,24,0.5), 0 1px 2px 0 rgba(5,10,24,0.3);
-  --cp-shadow-3: 0 4px 16px 0 rgba(5,10,24,0.6), 0 2px 4px 0 rgba(5,10,24,0.3);
-  --cp-shadow-4: 0 8px 32px 0 rgba(5,10,24,0.7), 0 4px 8px 0 rgba(5,10,24,0.4);
-  --cp-shadow-5: 0 16px 48px 0 rgba(5,10,24,0.8), 0 8px 16px 0 rgba(5,10,24,0.5);
+  --pom-shadow-0: none;
+  --pom-shadow-1: 0 1px 2px 0 rgba(5,10,24,0.4);
+  --pom-shadow-2: 0 2px 8px 0 rgba(5,10,24,0.5), 0 1px 2px 0 rgba(5,10,24,0.3);
+  --pom-shadow-3: 0 4px 16px 0 rgba(5,10,24,0.6), 0 2px 4px 0 rgba(5,10,24,0.3);
+  --pom-shadow-4: 0 8px 32px 0 rgba(5,10,24,0.7), 0 4px 8px 0 rgba(5,10,24,0.4);
+  --pom-shadow-5: 0 16px 48px 0 rgba(5,10,24,0.8), 0 8px 16px 0 rgba(5,10,24,0.5);
 
   /* ── Motion ─────────────────────────────────────────────────────── */
-  --cp-duration-instant: 0ms;
-  --cp-duration-fast:    100ms;
-  --cp-duration-normal:  200ms;
-  --cp-duration-slow:    350ms;
-  --cp-duration-enter:   250ms;
-  --cp-duration-exit:    150ms;
+  --pom-duration-instant: 0ms;
+  --pom-duration-fast:    100ms;
+  --pom-duration-normal:  200ms;
+  --pom-duration-slow:    350ms;
+  --pom-duration-enter:   250ms;
+  --pom-duration-exit:    150ms;
 
-  --cp-ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
-  --cp-ease-in:     cubic-bezier(0.4, 0.0, 1.0, 1);
-  --cp-ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
-  --cp-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --pom-ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
+  --pom-ease-in:     cubic-bezier(0.4, 0.0, 1.0, 1);
+  --pom-ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --pom-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* ── Focus ───────────────────────────────────────────────────────── */
-  --cp-focus-ring: 0 0 0 2px var(--cp-amber-400);
+  --pom-focus-ring: 0 0 0 2px var(--pom-amber-400);
 }
 
 @media (prefers-reduced-motion: reduce) {

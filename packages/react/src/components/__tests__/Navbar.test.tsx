@@ -39,15 +39,15 @@ describe('Navbar', () => {
 
   it('applies sticky class when sticky prop set', () => {
     render(<Navbar sticky />)
-    expect(document.querySelector('.cp-navbar--sticky')).toBeInTheDocument()
+    expect(document.querySelector('.pom-navbar--sticky')).toBeInTheDocument()
   })
 
   it('hamburger button toggles mobile menu', async () => {
     render(<Navbar links={links} />)
     const hamburger = screen.getByRole('button', { name: 'Open menu' })
-    expect(document.querySelector('.cp-navbar__mobile-menu')).not.toBeInTheDocument()
+    expect(document.querySelector('.pom-navbar__mobile-menu')).not.toBeInTheDocument()
     await userEvent.click(hamburger)
-    expect(document.querySelector('.cp-navbar__mobile-menu')).toBeInTheDocument()
+    expect(document.querySelector('.pom-navbar__mobile-menu')).toBeInTheDocument()
     expect(hamburger).toHaveAttribute('aria-expanded', 'true')
   })
 
@@ -60,8 +60,8 @@ describe('Navbar', () => {
   it('mobile menu closes after clicking a link', async () => {
     render(<Navbar links={links} />)
     await userEvent.click(screen.getByRole('button', { name: 'Open menu' }))
-    const mobileLinks = document.querySelectorAll('.cp-navbar__mobile-link')
+    const mobileLinks = document.querySelectorAll('.pom-navbar__mobile-link')
     await userEvent.click(mobileLinks[0])
-    expect(document.querySelector('.cp-navbar__mobile-menu')).not.toBeInTheDocument()
+    expect(document.querySelector('.pom-navbar__mobile-menu')).not.toBeInTheDocument()
   })
 })

@@ -35,10 +35,10 @@ export const Card: React.FC<CardProps> = ({
   as: Component = 'div',
 }) => {
   const classes = [
-    'cp-card',
-    `cp-card--elevation-${elevation}`,
-    padding !== 'none' ? `cp-card--pad-${padding}` : '',
-    interactive ? 'cp-card--interactive' : '',
+    'pom-card',
+    `pom-card--elevation-${elevation}`,
+    padding !== 'none' ? `pom-card--pad-${padding}` : '',
+    interactive ? 'pom-card--interactive' : '',
     className,
   ]
     .filter(Boolean)
@@ -48,13 +48,13 @@ export const Card: React.FC<CardProps> = ({
 }
 
 export const CardHeader: React.FC<CardHeaderProps> = ({ children, className = '' }) => (
-  <div className={`cp-card__header ${className}`.trim()}>{children}</div>
+  <div className={`pom-card__header ${className}`.trim()}>{children}</div>
 )
 
 export const CardBody: React.FC<CardBodyProps> = ({ children, className = '' }) => (
-  <div className={`cp-card__body ${className}`.trim()}>{children}</div>
+  <div className={`pom-card__body ${className}`.trim()}>{children}</div>
 )
 
 export const CardFooter: React.FC<CardFooterProps> = ({ children, className = '' }) => (
-  <div className={`cp-card__footer ${className}`.trim()}>{children}</div>
+  <div className={`pom-card__footer ${className}`.trim()}>{children}</div>
 )

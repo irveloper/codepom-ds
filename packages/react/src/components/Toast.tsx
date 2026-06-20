@@ -51,7 +51,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
     <ToastContext.Provider value={{ show, dismiss }}>
       {children}
       <div
-        className={`cp-toast-region cp-toast-region--${position}`}
+        className={`pom-toast-region pom-toast-region--${position}`}
         role="region"
         aria-label="Notifications"
         aria-live="polite"
@@ -81,19 +81,19 @@ const ToastCard: React.FC<ToastCardProps> = ({ toast, onDismiss }) => {
   return (
     <div
       role="status"
-      className={`cp-toast cp-toast--${variant}`}
+      className={`pom-toast pom-toast--${variant}`}
     >
-      <span className="cp-toast__icon" aria-hidden="true">{icons[variant]}</span>
-      <div className="cp-toast__body">
-        {toast.title && <p className="cp-toast__title">{toast.title}</p>}
-        <p className="cp-toast__message">{toast.message}</p>
+      <span className="pom-toast__icon" aria-hidden="true">{icons[variant]}</span>
+      <div className="pom-toast__body">
+        {toast.title && <p className="pom-toast__title">{toast.title}</p>}
+        <p className="pom-toast__message">{toast.message}</p>
         {toast.action && (
-          <button className="cp-toast__action" onClick={toast.action.onClick}>
+          <button className="pom-toast__action" onClick={toast.action.onClick}>
             {toast.action.label}
           </button>
         )}
       </div>
-      <button className="cp-toast__close" onClick={onDismiss} aria-label="Dismiss">
+      <button className="pom-toast__close" onClick={onDismiss} aria-label="Dismiss">
         ✕
       </button>
     </div>

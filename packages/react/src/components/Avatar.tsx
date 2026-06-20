@@ -35,8 +35,8 @@ export const Avatar: React.FC<AvatarProps> = ({
   const label = alt ?? name ?? 'Avatar'
 
   const classes = [
-    'cp-avatar',
-    `cp-avatar--${size}`,
+    'pom-avatar',
+    `pom-avatar--${size}`,
     className,
   ]
     .filter(Boolean)
@@ -45,15 +45,15 @@ export const Avatar: React.FC<AvatarProps> = ({
   return (
     <span className={classes} role="img" aria-label={label}>
       {src ? (
-        <img src={src} alt={label} className="cp-avatar__img" />
+        <img src={src} alt={label} className="pom-avatar__img" />
       ) : (
-        <span className="cp-avatar__initials" aria-hidden="true">
+        <span className="pom-avatar__initials" aria-hidden="true">
           {displayInitials}
         </span>
       )}
       {status !== 'none' && (
         <span
-          className={`cp-avatar__status cp-avatar__status--${status}`}
+          className={`pom-avatar__status pom-avatar__status--${status}`}
           aria-label={status}
         />
       )}

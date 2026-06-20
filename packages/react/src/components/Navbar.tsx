@@ -24,8 +24,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [menuOpen, setMenuOpen] = React.useState(false)
 
   const classes = [
-    'cp-navbar',
-    sticky ? 'cp-navbar--sticky' : '',
+    'pom-navbar',
+    sticky ? 'pom-navbar--sticky' : '',
     className,
   ]
     .filter(Boolean)
@@ -33,16 +33,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav className={classes}>
-      <div className="cp-navbar__inner">
-        {logo && <div className="cp-navbar__logo">{logo}</div>}
+      <div className="pom-navbar__inner">
+        {logo && <div className="pom-navbar__logo">{logo}</div>}
 
         {links.length > 0 && (
-          <ul className="cp-navbar__links" role="list">
+          <ul className="pom-navbar__links" role="list">
             {links.map((link, i) => (
               <li key={i}>
                 <a
                   href={link.href}
-                  className={['cp-navbar__link', link.active ? 'cp-navbar__link--active' : '']
+                  className={['pom-navbar__link', link.active ? 'pom-navbar__link--active' : '']
                     .filter(Boolean)
                     .join(' ')}
                   aria-current={link.active ? 'page' : undefined}
@@ -54,28 +54,28 @@ export const Navbar: React.FC<NavbarProps> = ({
           </ul>
         )}
 
-        {actions && <div className="cp-navbar__actions">{actions}</div>}
+        {actions && <div className="pom-navbar__actions">{actions}</div>}
 
         <button
-          className="cp-navbar__hamburger"
+          className="pom-navbar__hamburger"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          <span className="cp-navbar__hamburger-bar" />
-          <span className="cp-navbar__hamburger-bar" />
-          <span className="cp-navbar__hamburger-bar" />
+          <span className="pom-navbar__hamburger-bar" />
+          <span className="pom-navbar__hamburger-bar" />
+          <span className="pom-navbar__hamburger-bar" />
         </button>
       </div>
 
       {menuOpen && links.length > 0 && (
-        <div className="cp-navbar__mobile-menu">
+        <div className="pom-navbar__mobile-menu">
           <ul role="list">
             {links.map((link, i) => (
               <li key={i}>
                 <a
                   href={link.href}
-                  className={['cp-navbar__mobile-link', link.active ? 'cp-navbar__mobile-link--active' : '']
+                  className={['pom-navbar__mobile-link', link.active ? 'pom-navbar__mobile-link--active' : '']
                     .filter(Boolean)
                     .join(' ')}
                   aria-current={link.active ? 'page' : undefined}
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </li>
             ))}
           </ul>
-          {actions && <div className="cp-navbar__mobile-actions">{actions}</div>}
+          {actions && <div className="pom-navbar__mobile-actions">{actions}</div>}
         </div>
       )}
     </nav>

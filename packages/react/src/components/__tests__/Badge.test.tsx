@@ -13,23 +13,23 @@ describe('Badge', () => {
     'applies %s variant class',
     (variant) => {
       render(<Badge variant={variant}>label</Badge>)
-      expect(screen.getByText('label').closest('span')).toHaveClass(`cp-badge--${variant}`)
+      expect(screen.getByText('label').closest('span')).toHaveClass(`pom-badge--${variant}`)
     }
   )
 
   it('applies sm size class', () => {
     render(<Badge size="sm">label</Badge>)
-    expect(screen.getByText('label').closest('span')).toHaveClass('cp-badge--sm')
+    expect(screen.getByText('label').closest('span')).toHaveClass('pom-badge--sm')
   })
 
   it('does not add size class for md (default)', () => {
     render(<Badge size="md">label</Badge>)
-    expect(screen.getByText('label').closest('span')).not.toHaveClass('cp-badge--sm')
+    expect(screen.getByText('label').closest('span')).not.toHaveClass('pom-badge--sm')
   })
 
   it('adds dot class when dot prop set', () => {
     render(<Badge dot>label</Badge>)
-    expect(screen.getByText('label').closest('span')).toHaveClass('cp-badge--dot')
+    expect(screen.getByText('label').closest('span')).toHaveClass('pom-badge--dot')
   })
 
   it('merges custom className', () => {

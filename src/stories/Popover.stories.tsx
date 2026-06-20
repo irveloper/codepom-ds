@@ -20,7 +20,7 @@ type Story = StoryObj<typeof Popover>
 const PopoverContent = ({ title, body }: { title: string; body: string }) => (
   <div
     style={{
-      background: 'var(--cp-card, #1a2540)',
+      background: 'var(--pom-card, #1a2540)',
       border: '1px solid rgba(255,255,255,0.1)',
       borderRadius: 10,
       padding: 16,

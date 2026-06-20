@@ -54,7 +54,7 @@ describe('Modal', () => {
 
   it('applies size class', () => {
     render(<Wrapper size="lg" />)
-    expect(document.querySelector('.cp-modal--lg')).toBeInTheDocument()
+    expect(document.querySelector('.pom-modal--lg')).toBeInTheDocument()
   })
 
   it('renders footer when provided', () => {

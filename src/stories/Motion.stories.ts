@@ -11,11 +11,11 @@ export const Scale: StoryObj = {
   parameters: { layout: 'fullscreen' },
   render: () => `
     <style>
-      @keyframes cp-slide-in {
+      @keyframes pom-slide-in {
         from { opacity: 0; transform: translateY(6px); }
         to   { opacity: 1; transform: translateY(0); }
       }
-      .cp-demo-bar {
+      .pom-demo-bar {
         height: 100%;
         background: linear-gradient(90deg, #FBB040, #00DFFF);
         border-radius: 3px;
@@ -24,7 +24,7 @@ export const Scale: StoryObj = {
         transition-property: transform;
         transition-timing-function: cubic-bezier(0.0,0.0,0.2,1);
       }
-      .cp-demo-track:hover .cp-demo-bar { transform: scaleX(1); }
+      .pom-demo-track:hover .pom-demo-bar { transform: scaleX(1); }
     </style>
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:40px;min-height:100vh;">
       <div style="max-width:780px;margin:0 auto;">
@@ -34,12 +34,12 @@ export const Scale: StoryObj = {
         <h3 style="font-size:14px;font-family:'Space Mono',monospace;color:#94A3B8;letter-spacing:0.08em;margin:0 0 16px;">DURATION</h3>
         <div style="border:1px solid #1C2541;border-radius:12px;overflow:hidden;margin-bottom:40px;">
           ${[
-            { token: '--cp-duration-instant', val: '0ms',   use: 'State toggles (checked, active)' },
-            { token: '--cp-duration-fast',    val: '100ms', use: 'Hover, focus ring, icon swap' },
-            { token: '--cp-duration-normal',  val: '200ms', use: 'Fade in/out, color change' },
-            { token: '--cp-duration-slow',    val: '350ms', use: 'Slide, expand, height change' },
-            { token: '--cp-duration-enter',   val: '250ms', use: 'Elements entering the view' },
-            { token: '--cp-duration-exit',    val: '150ms', use: 'Elements leaving (always faster)' },
+            { token: '--pom-duration-instant', val: '0ms',   use: 'State toggles (checked, active)' },
+            { token: '--pom-duration-fast',    val: '100ms', use: 'Hover, focus ring, icon swap' },
+            { token: '--pom-duration-normal',  val: '200ms', use: 'Fade in/out, color change' },
+            { token: '--pom-duration-slow',    val: '350ms', use: 'Slide, expand, height change' },
+            { token: '--pom-duration-enter',   val: '250ms', use: 'Elements entering the view' },
+            { token: '--pom-duration-exit',    val: '150ms', use: 'Elements leaving (always faster)' },
           ].map(r => `
             <div style="display:flex;align-items:center;gap:16px;padding:13px 18px;border-bottom:1px solid #0e1627;">
               <span style="font-family:'Space Mono',monospace;font-size:13px;color:#FBB040;min-width:220px;">${r.token}</span>
@@ -52,10 +52,10 @@ export const Scale: StoryObj = {
         <h3 style="font-size:14px;font-family:'Space Mono',monospace;color:#94A3B8;letter-spacing:0.08em;margin:0 0 16px;">EASING</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px;">
           ${[
-            { token: '--cp-ease-out',    val: 'cubic-bezier(0.0,0.0,0.2,1)',    use: 'Enter / decelerate',  hint: 'Things entering screen. Fast start, soft land.' },
-            { token: '--cp-ease-in',     val: 'cubic-bezier(0.4,0.0,1.0,1)',    use: 'Exit / accelerate',   hint: 'Things leaving screen. Slow start, fast exit.' },
-            { token: '--cp-ease-in-out', val: 'cubic-bezier(0.4,0.0,0.2,1)',    use: 'Move / standard',     hint: 'Moving between states. Balanced feel.' },
-            { token: '--cp-ease-spring', val: 'cubic-bezier(0.34,1.56,0.64,1)', use: 'Spring / overshoot',  hint: 'Playful bounce. Use sparingly for delight.' },
+            { token: '--pom-ease-out',    val: 'cubic-bezier(0.0,0.0,0.2,1)',    use: 'Enter / decelerate',  hint: 'Things entering screen. Fast start, soft land.' },
+            { token: '--pom-ease-in',     val: 'cubic-bezier(0.4,0.0,1.0,1)',    use: 'Exit / accelerate',   hint: 'Things leaving screen. Slow start, fast exit.' },
+            { token: '--pom-ease-in-out', val: 'cubic-bezier(0.4,0.0,0.2,1)',    use: 'Move / standard',     hint: 'Moving between states. Balanced feel.' },
+            { token: '--pom-ease-spring', val: 'cubic-bezier(0.34,1.56,0.64,1)', use: 'Spring / overshoot',  hint: 'Playful bounce. Use sparingly for delight.' },
           ].map(r => `
             <div style="background:#08192E;border:1px solid #1C2541;border-radius:12px;padding:20px;">
               <div style="font-family:'Space Mono',monospace;font-size:12px;color:#FBB040;margin-bottom:8px;">${r.token}</div>
@@ -76,8 +76,8 @@ export const Scale: StoryObj = {
           ].map(r => `
             <div style="display:flex;align-items:center;gap:16px;">
               <span style="font-family:'Space Mono',monospace;font-size:12px;color:#64748B;min-width:120px;">${r.label}</span>
-              <div class="cp-demo-track" style="flex:1;height:20px;background:#08192E;border:1px solid #1C2541;border-radius:4px;overflow:hidden;cursor:pointer;">
-                <div class="cp-demo-bar" style="transition-duration:${r.dur};"></div>
+              <div class="pom-demo-track" style="flex:1;height:20px;background:#08192E;border:1px solid #1C2541;border-radius:4px;overflow:hidden;cursor:pointer;">
+                <div class="pom-demo-bar" style="transition-duration:${r.dur};"></div>
               </div>
             </div>
           `).join('')}

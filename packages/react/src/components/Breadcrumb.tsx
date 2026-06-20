@@ -27,23 +27,23 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   const sep = separatorChar[separator]
 
   return (
-    <nav aria-label="Breadcrumb" className={`cp-breadcrumb ${className}`.trim()}>
-      <ol className="cp-breadcrumb__list">
+    <nav aria-label="Breadcrumb" className={`pom-breadcrumb ${className}`.trim()}>
+      <ol className="pom-breadcrumb__list">
         {items.map((item, i) => {
           const isLast = i === items.length - 1
           return (
-            <li key={i} className="cp-breadcrumb__item">
+            <li key={i} className="pom-breadcrumb__item">
               {i > 0 && (
-                <span className="cp-breadcrumb__sep" aria-hidden="true">
+                <span className="pom-breadcrumb__sep" aria-hidden="true">
                   {sep}
                 </span>
               )}
               {isLast ? (
-                <span aria-current="page" className="cp-breadcrumb__current">
+                <span aria-current="page" className="pom-breadcrumb__current">
                   {item.label}
                 </span>
               ) : (
-                <a href={item.href ?? '#'} className="cp-breadcrumb__link">
+                <a href={item.href ?? '#'} className="pom-breadcrumb__link">
                   {item.label}
                 </a>
               )}
