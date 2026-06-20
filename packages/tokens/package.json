@@ -1,6 +1,6 @@
 {
   "name": "@codepom/tokens",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "CodePom design tokens — CSS custom properties, JS constants, Tailwind preset",
   "type": "module",
   "exports": {
