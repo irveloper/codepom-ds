@@ -24,6 +24,7 @@ export const Modal: React.FC<ModalProps> = ({
   className = '',
 }) => {
   const dialogRef = React.useRef<HTMLDialogElement>(null)
+  const titleId = React.useId()
 
   React.useEffect(() => {
     const dialog = dialogRef.current
@@ -54,13 +55,13 @@ export const Modal: React.FC<ModalProps> = ({
       ref={dialogRef}
       className={['cp-modal-backdrop', className].filter(Boolean).join(' ')}
       onClick={handleBackdropClick}
-      aria-labelledby={title ? 'cp-modal-title' : undefined}
+      aria-labelledby={title ? titleId : undefined}
       aria-modal="true"
     >
       <div className={`cp-modal cp-modal--${size}`}>
         <div className="cp-modal__header">
           {title && (
-            <h2 id="cp-modal-title" className="cp-modal__title">
+            <h2 id={titleId} className="cp-modal__title">
               {title}
             </h2>
           )}

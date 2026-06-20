@@ -1,13 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
-import Badge from '../components/Badge.astro';
-import Mascot from '../components/Mascot.astro';
-import BrandPrinciples from '../components/BrandPrinciples.astro';
-import Card from '../components/Card.astro';
-import Input from '../components/Input.astro';
-import Toggle from '../components/Toggle.astro';
-import Pattern from '../components/Pattern.astro';
+import {
+  Mascot,
+  BrandPrinciples,
+  Pattern,
+  Button,
+  Badge,
+  Card,
+  CardBody,
+  Alert,
+  Field,
+  Label,
+  Input,
+  Select,
+} from '@codepom/react';
 ---
 
 <Layout>
@@ -32,8 +38,14 @@ import Pattern from '../components/Pattern.astro';
         <div class="font-mono text-[12px] text-cyan-400 mb-2.5">WELCOME</div>
         <h1 class="text-[34px] font-bold tracking-tight leading-[1.05] mb-2.5">CodePom Design System</h1>
         <p class="text-muted text-base max-w-[620px] leading-relaxed">
-          Pioneering agile web engineering &amp; fiercely loyal tech partners. Built with Astro + Storybook + Tailwind CSS.
+          Pioneering agile web engineering &amp; fiercely loyal tech partners. Built with Astro + React + Tailwind CSS.
         </p>
+      </div>
+
+      <div class="mb-6">
+        <Alert variant="info" title="React-powered">
+          All UI components come from <code>@codepom/react</code> — the same package consumed by Next.js, plain React, and this Astro site.
+        </Alert>
       </div>
 
       <div class="border border-navy-800 rounded-[14px] bg-card p-8 mb-8">
@@ -41,12 +53,11 @@ import Pattern from '../components/Pattern.astro';
         <div class="flex flex-wrap gap-3 items-center">
           <Button variant="primary" size="md">npm run storybook</Button>
           <Button variant="secondary" size="md">npm run dev</Button>
-          <Button variant="accent" size="md">npm run build</Button>
-          <Button variant="outline" size="md">Read the docs</Button>
-          <Button variant="ghost" size="md">Give feedback</Button>
+          <Button variant="ghost" size="md">Read the docs</Button>
+          <Button variant="destructive" size="md">Danger</Button>
           <Badge variant="primary">Storybook</Badge>
-          <Badge variant="accent">Astro 6</Badge>
-          <Badge variant="secondary" dot>Live</Badge>
+          <Badge variant="info">Astro 6</Badge>
+          <Badge variant="success">Live</Badge>
           <Badge variant="warning">v0.1.0</Badge>
         </div>
       </div>
@@ -59,40 +70,46 @@ import Pattern from '../components/Pattern.astro';
       <div class="mb-8">
         <h2 class="font-mono text-[14px] text-muted tracking-widest mb-3.5">FOUNDATIONS</h2>
         <div class="grid grid-cols-3 gap-4">
-          <Card>
-            <div class="p-6 flex flex-col items-center gap-4">
-              <Mascot variant="full" size={80} />
-              <div class="text-center">
-                <div class="font-semibold text-sm">Logo &amp; Mascot</div>
-                <div class="text-[12px] text-muted mt-0.5">3 variants</div>
+          <Card elevation={1}>
+            <CardBody>
+              <div class="p-2 flex flex-col items-center gap-4">
+                <Mascot variant="full" size={80} />
+                <div class="text-center">
+                  <div class="font-semibold text-sm">Logo &amp; Mascot</div>
+                  <div class="text-[12px] text-muted mt-0.5">3 variants</div>
+                </div>
               </div>
-            </div>
+            </CardBody>
           </Card>
-          <Card>
-            <div class="p-6 flex flex-col gap-4">
-              <div class="flex gap-2">
-                <span class="w-8 h-8 rounded-[6px] bg-navy-950 border border-navy-800"></span>
-                <span class="w-8 h-8 rounded-[6px] bg-amber-400"></span>
-                <span class="w-8 h-8 rounded-[6px] bg-cyan-400"></span>
-                <span class="w-8 h-8 rounded-[6px] bg-ivory-50"></span>
+          <Card elevation={1}>
+            <CardBody>
+              <div class="p-2 flex flex-col gap-4">
+                <div class="flex gap-2">
+                  <span class="w-8 h-8 rounded-[6px] bg-navy-950 border border-navy-800"></span>
+                  <span class="w-8 h-8 rounded-[6px] bg-amber-400"></span>
+                  <span class="w-8 h-8 rounded-[6px] bg-cyan-400"></span>
+                  <span class="w-8 h-8 rounded-[6px] bg-ivory-50"></span>
+                </div>
+                <div class="text-center">
+                  <div class="font-semibold text-sm">Colors &amp; Tokens</div>
+                  <div class="text-[12px] text-muted mt-0.5">Navy · Amber · Cyan · Ivory</div>
+                </div>
               </div>
-              <div class="text-center">
-                <div class="font-semibold text-sm">Colors &amp; Tokens</div>
-                <div class="text-[12px] text-muted mt-0.5">Navy · Amber · Cyan · Ivory</div>
-              </div>
-            </div>
+            </CardBody>
           </Card>
-          <Card>
-            <div class="p-6 flex flex-col items-center gap-4">
-              <div class="flex gap-6 text-center">
-                <div><div class="text-3xl font-bold tracking-tighter">Aa</div><div class="text-[10px] text-muted">Sans</div></div>
-                <div><div class="text-3xl font-bold font-mono">Aa</div><div class="text-[10px] text-muted">Mono</div></div>
+          <Card elevation={1}>
+            <CardBody>
+              <div class="p-2 flex flex-col items-center gap-4">
+                <div class="flex gap-6 text-center">
+                  <div><div class="text-3xl font-bold tracking-tighter">Aa</div><div class="text-[10px] text-muted">Sans</div></div>
+                  <div><div class="text-3xl font-bold font-mono">Aa</div><div class="text-[10px] text-muted">Mono</div></div>
+                </div>
+                <div class="text-center">
+                  <div class="font-semibold text-sm">Typography</div>
+                  <div class="text-[12px] text-muted mt-0.5">Space Grotesk + Space Mono</div>
+                </div>
               </div>
-              <div class="text-center">
-                <div class="font-semibold text-sm">Typography</div>
-                <div class="text-[12px] text-muted mt-0.5">Space Grotesk + Space Mono</div>
-              </div>
-            </div>
+            </CardBody>
           </Card>
         </div>
       </div>
@@ -106,22 +123,18 @@ import Pattern from '../components/Pattern.astro';
         <h2 class="font-mono text-[14px] text-muted tracking-widest mb-3.5">SAMPLE FORM</h2>
         <div class="border border-navy-800 rounded-[12px] bg-card p-6">
           <div class="grid grid-cols-2 gap-4 mb-4">
-            <Input label="Project name" value="codepom-web" hint="Lowercase, hyphenated." />
-            <div>
-              <label class="text-[13px] font-semibold block mb-[7px]">Stack</label>
-              <select class="w-full appearance-none font-sans text-[14px] bg-navy-900 border border-navy-800 rounded-[8px] px-[12px] py-[10px] text-foreground outline-none cursor-pointer">
+            <Field hint="Lowercase, hyphenated.">
+              <Label>Project name</Label>
+              <Input defaultValue="codepom-web" type="text" />
+            </Field>
+            <Field>
+              <Label>Stack</Label>
+              <Select>
                 <option>Next.js + Tailwind</option>
                 <option selected>Astro</option>
                 <option>Remix</option>
-              </select>
-            </div>
-          </div>
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <div class="text-[13px] font-semibold">Notifications</div>
-              <div class="text-[12px] text-muted">Push alerts</div>
-            </div>
-            <Toggle checked />
+              </Select>
+            </Field>
           </div>
         </div>
       </div>
