@@ -15,9 +15,11 @@
   "module":"./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": ["dist"],
+  "sideEffects": ["*.css"],
   "scripts": {
     "build": "tsup && cp src/styles.css dist/styles.css",
-    "dev":   "tsup --watch"
+    "dev":   "tsup --watch",
+    "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
     "react":     ">=18",
@@ -31,6 +33,19 @@
     "tsup":             "^8.0.0",
     "typescript":       "^5.4.0"
   },
-  "keywords": ["react", "design-system", "codepom", "components"],
-  "license": "MIT"
+  "keywords": ["react", "design-system", "codepom", "components", "ui"],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codepom/design-system.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/codepom/design-system#readme",
+  "bugs": {
+    "url": "https://github.com/codepom/design-system/issues"
+  }
 }
