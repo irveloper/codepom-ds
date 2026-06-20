@@ -79,6 +79,7 @@ export const Icon = ({ name, size = 24, color, className }: IconProps) => {
   const vh = def.vh ?? 24
   return (
     <svg
+      role="img"
       width={size}
       height={size}
       viewBox={`0 0 ${vw} ${vh}`}
