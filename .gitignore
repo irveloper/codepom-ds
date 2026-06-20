@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 # AI
 .claude/
+
+
+storybook-static/
