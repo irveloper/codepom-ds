@@ -1,0 +1,71 @@
+---
+export type AlertVariant = 'info' | 'success' | 'warning' | 'error';
+
+interface Props {
+  variant?: AlertVariant;
+  title?: string;
+  dismissible?: boolean;
+  class?: string;
+}
+
+const { variant = 'info', title, dismissible = false } = Astro.props;
+
+const config: Record<AlertVariant, { border: string; bg: string; iconColor: string; titleColor: string }> = {
+  info:    { border: 'border-cyan-400/30',   bg: 'bg-cyan-400/8',   iconColor: '#00DFFF', titleColor: '#00DFFF' },
+  success: { border: 'border-success/30',    bg: 'bg-success/8',    iconColor: '#4ADE80', titleColor: '#4ADE80' },
+  warning: { border: 'border-warning/30',    bg: 'bg-warning/8',    iconColor: '#FB923C', titleColor: '#FB923C' },
+  error:   { border: 'border-error/30',      bg: 'bg-error/8',      iconColor: '#F87171', titleColor: '#F87171' },
+};
+
+const { border, bg, iconColor, titleColor } = config[variant];
+---
+
+<div
+  role="alert"
+  data-alert
+  class={`flex gap-3 border rounded-xl px-4 py-3.5 ${border} ${bg} ${Astro.props.class ?? ''}`}
+>
+  <!-- icon -->
+  {variant === 'info' && (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px;" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+    </svg>
+  )}
+  {variant === 'success' && (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={iconColor} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px;" aria-hidden="true">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+  )}
+  {variant === 'warning' && (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px;" aria-hidden="true">
+      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+  )}
+  {variant === 'error' && (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={iconColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px;" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/>
+    </svg>
+  )}
+
+  <div class="flex-1 min-w-0">
+    {title && (
+      <p class="font-semibold text-sm mb-0.5 mt-0" style={`color:${titleColor}`}>{title}</p>
+    )}
+    <div class="text-sm text-muted leading-relaxed">
+      <slot />
+    </div>
+  </div>
+
+  {dismissible && (
+    <button
+      class="flex-none text-muted hover:text-foreground transition-colors duration-100 cursor-pointer"
+      style="margin-top:1px;"
+      onclick="this.closest('[data-alert]').remove()"
+      aria-label="Dismiss alert"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  )}
+</div>

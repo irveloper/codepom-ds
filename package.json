@@ -10,17 +10,24 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build",
+    "build:packages": "pnpm --filter './packages/*' build",
+    "dev:react": "pnpm --filter @codepom/react dev"
   },
   "dependencies": {
+    "@astrojs/react": "^5.0.7",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.7",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
-    "@storybook-astro/framework": "^1.5.0",
     "@storybook/builder-vite": "^10.4.6",
+    "@storybook/react-vite": "^10.4.6",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "storybook": "^10.4.6"
   }
 }

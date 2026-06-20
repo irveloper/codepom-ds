@@ -1,0 +1,15 @@
+{
+  "name": "@codepom/tokens",
+  "version": "0.1.0",
+  "description": "CodePom design tokens — CSS custom properties, JS constants, Tailwind preset",
+  "type": "module",
+  "exports": {
+    "./css":      "./css/tokens.css",
+    "./reset":    "./css/reset.css",
+    "./js":       "./js/index.js",
+    "./tailwind": "./tailwind/preset.js"
+  },
+  "files": ["css", "js", "tailwind"],
+  "keywords": ["design-tokens", "codepom", "css-variables"],
+  "license": "MIT"
+}

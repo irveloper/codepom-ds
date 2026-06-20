@@ -7,7 +7,7 @@
   --color-navy-950: #08192E;
   --color-navy-900: #0B132B;
   --color-navy-800: #1C2541;
-  --color-navy-700: #3A506B;
+  --color-navy-700: #3A506B;  /* borders & decorative only — fails WCAG AA for text */
 
   --color-amber-400: #FBB040;
   --color-amber-500: #F59E0B;
@@ -22,6 +22,13 @@
   --color-success: #4ADE80;
   --color-warning: #FB923C;
   --color-error: #F87171;
+
+  /* Accessible text scale — all pass WCAG AA 4.5:1 on navy-900 */
+  --color-text-primary:   #F8FAFC;  /* 17.6:1 */
+  --color-text-secondary: #94A3B8;  /*  7.2:1 */
+  --color-text-tertiary:  #64748B;  /*  3.9:1 — large text / decorative only */
+  --color-muted: #94A3B8;
+  --color-foreground: #F8FAFC;
 }
 
 * {
@@ -54,4 +61,57 @@ body {
 ::selection {
   background: #00DFFF;
   color: #08192E;
+}
+
+/* ── Focus rings ──────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #FBB040;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove focus ring when using mouse */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Skip link ────────────────────────────────────────────────────── */
+.cp-skip-link {
+  position: absolute;
+  top: -999px;
+  left: 8px;
+  z-index: 9999;
+  background: #FBB040;
+  color: #0B132B;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+}
+.cp-skip-link:focus {
+  top: 0;
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Screen reader only ───────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

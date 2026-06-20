@@ -1,5 +1,6 @@
-import type { Preview } from '@storybook-astro/framework';
-import '../src/styles/global.css';
+import type { Preview } from '@storybook/react-vite'
+import '../src/styles/global.css'
+import '../packages/react/src/styles.css'
 
 const preview: Preview = {
   parameters: {
@@ -13,6 +14,6 @@ const preview: Preview = {
       ],
     },
   },
-};
+}
 
-export default preview;
+export default preview

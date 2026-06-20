@@ -1,0 +1,69 @@
+---
+export type PopoverPlacement = 'top' | 'bottom' | 'left' | 'right';
+
+interface Props {
+  placement?: PopoverPlacement;
+  class?: string;
+}
+
+const { placement = 'bottom' } = Astro.props;
+const id = `popover-${Math.random().toString(36).slice(2, 7)}`;
+
+const popStyles: Record<PopoverPlacement, string> = {
+  top:    'bottom-full left-1/2 -translate-x-1/2 mb-2',
+  bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+  left:   'right-full top-0 mr-2',
+  right:  'left-full top-0 ml-2',
+};
+---
+
+<span class={`relative inline-flex ${Astro.props.class ?? ''}`} data-popover-wrap>
+  <span
+    data-popover-trigger
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls={id}
+    tabindex="0"
+  >
+    <slot name="trigger" />
+  </span>
+
+  <div
+    id={id}
+    role="dialog"
+    data-popover-panel
+    aria-modal="false"
+    hidden
+    class={`absolute z-50 min-w-[200px] rounded-xl bg-navy-900 border border-navy-800 shadow-[0_4px_16px_0_rgba(5,10,24,0.6),0_2px_4px_0_rgba(5,10,24,0.3)] ${popStyles[placement]} ${Astro.props.class ?? ''}`}
+  >
+    <slot name="content" />
+  </div>
+</span>
+
+<script>
+  document.querySelectorAll('[data-popover-wrap]').forEach(wrap => {
+    const trigger = wrap.querySelector('[data-popover-trigger]') as HTMLElement;
+    const panel   = wrap.querySelector('[data-popover-panel]') as HTMLElement;
+    if (!trigger || !panel) return;
+
+    const open  = () => { panel.hidden = false; trigger.setAttribute('aria-expanded','true'); };
+    const close = () => { panel.hidden = true;  trigger.setAttribute('aria-expanded','false'); };
+    const toggle = () => panel.hidden ? open() : close();
+
+    trigger.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+    trigger.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      if (e.key === 'Escape') close();
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target as Node)) close();
+    });
+
+    // Close on Escape anywhere
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && !panel.hidden) { close(); trigger.focus(); }
+    });
+  });
+</script>

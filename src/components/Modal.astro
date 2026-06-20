@@ -1,0 +1,64 @@
+---
+export type ModalSize = 'sm' | 'md' | 'lg' | 'full';
+
+interface Props {
+  id: string;
+  size?: ModalSize;
+  title?: string;
+  class?: string;
+}
+
+const { id, size = 'md', title } = Astro.props;
+
+const sizeStyles: Record<ModalSize, string> = {
+  sm:   'w-full max-w-sm',
+  md:   'w-full max-w-lg',
+  lg:   'w-full max-w-2xl',
+  full: 'w-full max-w-[calc(100vw-48px)] h-[calc(100vh-48px)]',
+};
+---
+
+<dialog
+  id={id}
+  class={`bg-navy-900 border border-navy-800 rounded-2xl p-0 shadow-[0_16px_48px_0_rgba(5,10,24,0.8),0_8px_16px_0_rgba(5,10,24,0.5)] backdrop:bg-navy-950/70 backdrop:backdrop-blur-sm ${sizeStyles[size]} ${Astro.props.class ?? ''}`}
+  aria-labelledby={title ? `${id}-title` : undefined}
+>
+  <div class="flex flex-col h-full">
+    <!-- header -->
+    {title && (
+      <div class="flex items-center justify-between px-6 py-5 border-b border-navy-800">
+        <h2 id={`${id}-title`} class="font-semibold text-base text-foreground m-0">{title}</h2>
+        <button
+          class="text-muted hover:text-foreground transition-colors duration-100 cursor-pointer flex-none"
+          onclick={`document.getElementById('${id}').close()`}
+          aria-label="Close modal"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    )}
+
+    <!-- body -->
+    <div class="flex-1 overflow-y-auto px-6 py-5 text-sm text-muted leading-relaxed">
+      <slot />
+    </div>
+
+    <!-- footer -->
+    {Astro.slots.has('footer') && (
+      <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-navy-800">
+        <slot name="footer" />
+      </div>
+    )}
+  </div>
+</dialog>
+
+<script>
+  // Close on backdrop click
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
+</script>

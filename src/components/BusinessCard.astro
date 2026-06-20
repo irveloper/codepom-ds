@@ -1,4 +1,6 @@
 ---
+import Mascot from './Mascot.astro';
+
 interface Props {
   class?: string;
 }
@@ -7,24 +9,10 @@ interface Props {
 <div class="flex gap-[24px] flex-wrap" class:list={[Astro.props.class]}>
   <div class="w-[420px] h-[248px] rounded-[14px] bg-[#08192E] border border-navy-800 p-[26px] flex flex-col justify-between relative overflow-hidden shadow-[0_18px_50px_rgba(0,0,0,0.4)]">
     <div class="absolute -right-[30px] -top-[30px] w-[150px] h-[150px] opacity-[0.12]">
-      <svg viewBox="0 0 200 200" width="150" height="150" aria-hidden="true">
-        <path d="M 70 48 L 50 14 L 96 40 Z" fill="#FBB040"/>
-        <path d="M 130 48 L 150 14 L 104 40 Z" fill="#FBB040"/>
-        <path d="M 100.0 38.0 Q 116.0 27.6 126.8 43.3 Q 145.6 39.8 149.5 58.5 Q 168.2 62.4 164.7 81.2 Q 180.4 92.0 170.0 108.0 Q 180.4 124.0 164.7 134.8 Q 168.2 153.6 149.5 157.5 Q 145.6 176.2 126.8 172.7 Q 116.0 188.4 100.0 178.0 Q 84.0 188.4 73.2 172.7 Q 54.4 176.2 50.5 157.5 Q 31.8 153.6 35.3 134.8 Q 19.6 124.0 30.0 108.0 Q 19.6 92.0 35.3 81.2 Q 31.8 62.4 50.5 58.5 Q 54.4 39.8 73.2 43.3 Q 84.0 27.6 100.0 38.0 Z" fill="#FBB040"/>
-      </svg>
+      <Mascot size={150} variant="solid" />
     </div>
     <div class="flex items-center gap-[12px] z-[1]">
-      <svg viewBox="0 0 200 200" width="46" height="46" aria-hidden="true">
-        <path d="M 70 48 L 50 14 L 96 40 Z" fill="#FBB040"/>
-        <path d="M 130 48 L 150 14 L 104 40 Z" fill="#FBB040"/>
-        <path d="M 72 44 L 60 24 L 86 40 Z" fill="#5A2E12"/>
-        <path d="M 128 44 L 140 24 L 114 40 Z" fill="#5A2E12"/>
-        <path d="M 100.0 38.0 Q 116.0 27.6 126.8 43.3 Q 145.6 39.8 149.5 58.5 Q 168.2 62.4 164.7 81.2 Q 180.4 92.0 170.0 108.0 Q 180.4 124.0 164.7 134.8 Q 168.2 153.6 149.5 157.5 Q 145.6 176.2 126.8 172.7 Q 116.0 188.4 100.0 178.0 Q 84.0 188.4 73.2 172.7 Q 54.4 176.2 50.5 157.5 Q 31.8 153.6 35.3 134.8 Q 19.6 124.0 30.0 108.0 Q 19.6 92.0 35.3 81.2 Q 31.8 62.4 50.5 58.5 Q 54.4 39.8 73.2 43.3 Q 84.0 27.6 100.0 38.0 Z" fill="#FBE6C4"/>
-        <path d="M 35 100 Q 30 58 60 44 Q 100 28 140 44 Q 170 58 165 100 Q 140 76 100 74 Q 60 76 35 100 Z" fill="#FBB040"/>
-        <rect x="44" y="92" width="48" height="36" rx="10" fill="#0B192E" stroke="#FBB040" stroke-width="7"/>
-        <rect x="108" y="92" width="48" height="36" rx="10" fill="#0B192E" stroke="#FBB040" stroke-width="7"/>
-        <rect x="92" y="100" width="16" height="9" fill="#FBB040"/>
-      </svg>
+      <Mascot size={46} variant="full" />
       <div><div class="font-bold text-[20px] tracking-tight">CODEPOM</div><div class="font-mono text-[9px] text-cyan-400 tracking-wider">AGILE WEB ENGINEERING</div></div>
     </div>
     <div class="z-[1]">
@@ -38,22 +26,7 @@ interface Props {
     </div>
   </div>
   <div class="w-[420px] h-[248px] rounded-[14px] bg-ivory-50 border border-[#e9e6d6] flex flex-col items-center justify-center gap-[14px] shadow-[0_18px_50px_rgba(0,0,0,0.4)]">
-    <svg viewBox="0 0 200 200" width="72" height="72" aria-hidden="true">
-      <path d="M 70 48 L 50 14 L 96 40 Z" fill="#FBB040"/>
-      <path d="M 130 48 L 150 14 L 104 40 Z" fill="#FBB040"/>
-      <path d="M 100.0 38.0 Q 116.0 27.6 126.8 43.3 Q 145.6 39.8 149.5 58.5 Q 168.2 62.4 164.7 81.2 Q 180.4 92.0 170.0 108.0 Q 180.4 124.0 164.7 134.8 Q 168.2 153.6 149.5 157.5 Q 145.6 176.2 126.8 172.7 Q 116.0 188.4 100.0 178.0 Q 84.0 188.4 73.2 172.7 Q 54.4 176.2 50.5 157.5 Q 31.8 153.6 35.3 134.8 Q 19.6 124.0 30.0 108.0 Q 19.6 92.0 35.3 81.2 Q 31.8 62.4 50.5 58.5 Q 54.4 39.8 73.2 43.3 Q 84.0 27.6 100.0 38.0 Z" fill="#FBE6C4"/>
-      <path d="M 35 100 Q 30 58 60 44 Q 100 28 140 44 Q 170 58 165 100 Q 140 76 100 74 Q 60 76 35 100 Z" fill="#FBB040"/>
-      <rect x="44" y="92" width="48" height="36" rx="10" fill="#0B192E" stroke="#FBB040" stroke-width="7"/>
-      <rect x="108" y="92" width="48" height="36" rx="10" fill="#0B192E" stroke="#FBB040" stroke-width="7"/>
-      <rect x="92" y="100" width="16" height="9" fill="#FBB040"/>
-      <polyline points="64,102 56,110 64,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <polyline points="72,102 80,110 72,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <polyline points="128,102 120,110 128,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <polyline points="136,102 144,110 136,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 90 130 Q 100 126 110 130 Q 110 140 100 143 Q 90 140 90 130 Z" fill="#16202F"/>
-      <path d="M 82 146 Q 100 168 118 146 Q 100 156 82 146 Z" fill="#16202F"/>
-      <ellipse cx="100" cy="157" rx="9" ry="7" fill="#E08AA0"/>
-    </svg>
+    <Mascot size={72} variant="full" />
     <div class="font-bold text-[26px] tracking-tight text-navy-950">CODEPOM</div>
     <div class="font-mono text-[10px] text-[#3A506B] tracking-wider text-center">PIONEERING AGILE WEB ENGINEERING<br/>&amp; FIERCELY LOYAL TECH PARTNERS</div>
   </div>

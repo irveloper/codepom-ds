@@ -19,22 +19,7 @@ export const PhoneScreen: StoryObj = {
           </div>
           <div style="padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
             <div style="display:flex;align-items:center;gap:8px;">
-              <svg viewBox="0 0 200 200" width="30" height="30" aria-hidden="true">
-                <path d="M 70 48 L 50 14 L 96 40 Z" fill="#FBB040"/>
-                <path d="M 130 48 L 150 14 L 104 40 Z" fill="#FBB040"/>
-                <path d="M 100.0 38.0 Q 116.0 27.6 126.8 43.3 Q 145.6 39.8 149.5 58.5 Q 168.2 62.4 164.7 81.2 Q 180.4 92.0 170.0 108.0 Q 180.4 124.0 164.7 134.8 Q 168.2 153.6 149.5 157.5 Q 145.6 176.2 126.8 172.7 Q 116.0 188.4 100.0 178.0 Q 84.0 188.4 73.2 172.7 Q 54.4 176.2 50.5 157.5 Q 31.8 153.6 35.3 134.8 Q 19.6 124.0 30.0 108.0 Q 19.6 92.0 35.3 81.2 Q 31.8 62.4 50.5 58.5 Q 54.4 39.8 73.2 43.3 Q 84.0 27.6 100.0 38.0 Z" fill="#FBE6C4"/>
-                <path d="M 35 100 Q 30 58 60 44 Q 100 28 140 44 Q 170 58 165 100 Q 140 76 100 74 Q 60 76 35 100 Z" fill="#FBB040"/>
-                <rect x="44" y="92" width="48" height="36" rx="10" fill="#0B192E" stroke="#FBB040" stroke-width="7"/>
-                <rect x="108" y="92" width="48" height="36" rx="10" fill="#0B192E" stroke="#FBB040" stroke-width="7"/>
-                <rect x="92" y="100" width="16" height="9" fill="#FBB040"/>
-                <polyline points="64,102 56,110 64,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="72,102 80,110 72,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="128,102 120,110 128,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="136,102 144,110 136,118" fill="none" stroke="#00DFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M 90 130 Q 100 126 110 130 Q 110 140 100 143 Q 90 140 90 130 Z" fill="#16202F"/>
-                <path d="M 82 146 Q 100 168 118 146 Q 100 156 82 146 Z" fill="#16202F"/>
-                <ellipse cx="100" cy="157" rx="9" ry="7" fill="#E08AA0"/>
-              </svg>
+              <img src="/logo.svg" width="30" height="30" alt="CodePom mascot" style="object-fit:contain;" />
               <span style="font-weight:700;font-size:16px;">CodePom</span>
             </div>
             <span style="width:9px;height:9px;border-radius:50%;background:#4ADE80;box-shadow:0 0 8px #4ADE80;"></span>

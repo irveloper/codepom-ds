@@ -1,0 +1,62 @@
+---
+export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
+
+interface Props {
+  content: string;
+  placement?: TooltipPlacement;
+  class?: string;
+}
+
+const { content, placement = 'top' } = Astro.props;
+const id = `tooltip-${Math.random().toString(36).slice(2, 7)}`;
+
+const tipStyles: Record<TooltipPlacement, string> = {
+  top:    'bottom-full left-1/2 -translate-x-1/2 mb-2',
+  bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+  left:   'right-full top-1/2 -translate-y-1/2 mr-2',
+  right:  'left-full top-1/2 -translate-y-1/2 ml-2',
+};
+
+const arrowStyles: Record<TooltipPlacement, string> = {
+  top:    'top-full left-1/2 -translate-x-1/2 border-t-navy-800 border-x-transparent border-b-transparent border-[5px]',
+  bottom: 'bottom-full left-1/2 -translate-x-1/2 border-b-navy-800 border-x-transparent border-t-transparent border-[5px]',
+  left:   'left-full top-1/2 -translate-y-1/2 border-l-navy-800 border-y-transparent border-r-transparent border-[5px]',
+  right:  'right-full top-1/2 -translate-y-1/2 border-r-navy-800 border-y-transparent border-l-transparent border-[5px]',
+};
+---
+
+<span class={`relative inline-flex ${Astro.props.class ?? ''}`} data-tooltip-wrap>
+  <span
+    aria-describedby={id}
+    data-tooltip-trigger
+  >
+    <slot />
+  </span>
+
+  <span
+    id={id}
+    role="tooltip"
+    data-tooltip-tip
+    class={`pointer-events-none absolute z-50 whitespace-nowrap rounded-lg bg-navy-800 border border-navy-700 px-3 py-1.5 text-xs font-medium text-text-primary shadow-[0_4px_16px_0_rgba(5,10,24,0.6)] opacity-0 transition-opacity duration-150 ${tipStyles[placement]}`}
+    aria-hidden="true"
+  >
+    {content}
+    <span class={`absolute border-solid ${arrowStyles[placement]}`} aria-hidden="true" />
+  </span>
+</span>
+
+<script>
+  document.querySelectorAll('[data-tooltip-wrap]').forEach(wrap => {
+    const trigger = wrap.querySelector('[data-tooltip-trigger]');
+    const tip = wrap.querySelector('[data-tooltip-tip]') as HTMLElement;
+    if (!trigger || !tip) return;
+
+    const show = () => { tip.style.opacity = '1'; tip.removeAttribute('aria-hidden'); };
+    const hide = () => { tip.style.opacity = '0'; tip.setAttribute('aria-hidden', 'true'); };
+
+    trigger.addEventListener('mouseenter', show);
+    trigger.addEventListener('mouseleave', hide);
+    trigger.addEventListener('focusin', show);
+    trigger.addEventListener('focusout', hide);
+  });
+</script>

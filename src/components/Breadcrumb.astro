@@ -1,0 +1,46 @@
+---
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+  icon?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  separator?: 'slash' | 'chevron' | 'dot';
+  class?: string;
+}
+
+const { items, separator = 'chevron' } = Astro.props;
+
+const separators = {
+  slash:   '<span aria-hidden="true" style="color:#3A506B;margin:0 2px;">/</span>',
+  chevron: '<svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3A506B" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>',
+  dot:     '<span aria-hidden="true" style="color:#3A506B;margin:0 4px;font-size:10px;">•</span>',
+};
+
+const sep = separators[separator];
+---
+
+<nav aria-label="Breadcrumb" class={Astro.props.class}>
+  <ol class="flex items-center gap-1 flex-wrap text-sm">
+    {items.map((item, i) => {
+      const isLast = i === items.length - 1;
+      return (
+        <li class="flex items-center gap-1">
+          {i > 0 && <Fragment set:html={sep} />}
+          {item.icon && (
+            <span aria-hidden="true" class="flex items-center" set:html={item.icon} />
+          )}
+          {isLast ? (
+            <span aria-current="page" class="text-foreground font-medium">{item.label}</span>
+          ) : item.href ? (
+            <a href={item.href} class="text-muted hover:text-foreground transition-colors duration-100">{item.label}</a>
+          ) : (
+            <span class="text-muted">{item.label}</span>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
