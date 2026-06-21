@@ -29,11 +29,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const classes = [
-      'cp-btn',
-      `cp-btn--${variant}`,
-      `cp-btn--${size}`,
-      fullWidth ? 'cp-btn--full' : '',
-      loading ? 'cp-btn--loading' : '',
+      'pom-btn',
+      `pom-btn--${variant}`,
+      `pom-btn--${size}`,
+      fullWidth ? 'pom-btn--full' : '',
+      loading ? 'pom-btn--loading' : '',
       className,
     ]
       .filter(Boolean)
@@ -48,14 +48,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading && (
-          <span className="cp-btn__spinner" aria-hidden="true" />
+          <span className="pom-btn__spinner" aria-hidden="true" />
         )}
         {icon && iconPosition === 'left' && !loading && (
-          <span className="cp-btn__icon" aria-hidden="true">{icon}</span>
+          <span className="pom-btn__icon" aria-hidden="true">{icon}</span>
         )}
         {children && <span>{children}</span>}
         {icon && iconPosition === 'right' && !loading && (
-          <span className="cp-btn__icon" aria-hidden="true">{icon}</span>
+          <span className="pom-btn__icon" aria-hidden="true">{icon}</span>
         )}
       </button>
     )

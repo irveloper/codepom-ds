@@ -35,8 +35,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   }
 
   const classes = [
-    'cp-sidebar',
-    collapsed ? 'cp-sidebar--collapsed' : '',
+    'pom-sidebar',
+    collapsed ? 'pom-sidebar--collapsed' : '',
     className,
   ]
     .filter(Boolean)
@@ -45,9 +45,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside className={classes}>
       {onCollapse && (
-        <div className="cp-sidebar__toggle-wrap">
+        <div className="pom-sidebar__toggle-wrap">
           <button
-            className="cp-sidebar__toggle"
+            className="pom-sidebar__toggle"
             aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             onClick={() => onCollapse(!collapsed)}
           >
@@ -56,20 +56,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       )}
 
-      <nav className="cp-sidebar__nav" aria-label="Sidebar navigation">
-        <ul className="cp-sidebar__list" role="list">
+      <nav className="pom-sidebar__nav" aria-label="Sidebar navigation">
+        <ul className="pom-sidebar__list" role="list">
           {links.map((link, i) => {
             const hasChildren = link.children && link.children.length > 0
             const isExpanded = expandedGroups[i] ?? false
 
             return (
-              <li key={i} className="cp-sidebar__item">
+              <li key={i} className="pom-sidebar__item">
                 {hasChildren ? (
                   <>
                     <button
                       className={[
-                        'cp-sidebar__link',
-                        link.active ? 'cp-sidebar__link--active' : '',
+                        'pom-sidebar__link',
+                        link.active ? 'pom-sidebar__link--active' : '',
                       ]
                         .filter(Boolean)
                         .join(' ')}
@@ -77,31 +77,31 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       onClick={() => toggleGroup(i)}
                     >
                       {link.icon && (
-                        <span className="cp-sidebar__icon" aria-hidden="true">
+                        <span className="pom-sidebar__icon" aria-hidden="true">
                           {link.icon}
                         </span>
                       )}
                       {!collapsed && (
                         <>
-                          <span className="cp-sidebar__label">{link.label}</span>
+                          <span className="pom-sidebar__label">{link.label}</span>
                           {link.badge != null && (
-                            <span className="cp-sidebar__badge">{link.badge}</span>
+                            <span className="pom-sidebar__badge">{link.badge}</span>
                           )}
-                          <span className="cp-sidebar__chevron" aria-hidden="true">
+                          <span className="pom-sidebar__chevron" aria-hidden="true">
                             {isExpanded ? '▾' : '▸'}
                           </span>
                         </>
                       )}
                     </button>
                     {isExpanded && !collapsed && (
-                      <ul className="cp-sidebar__sub-list" role="list">
+                      <ul className="pom-sidebar__sub-list" role="list">
                         {link.children!.map((child, j) => (
-                          <li key={j} className="cp-sidebar__sub-item">
+                          <li key={j} className="pom-sidebar__sub-item">
                             <a
                               href={child.href}
                               className={[
-                                'cp-sidebar__sub-link',
-                                child.active ? 'cp-sidebar__sub-link--active' : '',
+                                'pom-sidebar__sub-link',
+                                child.active ? 'pom-sidebar__sub-link--active' : '',
                               ]
                                 .filter(Boolean)
                                 .join(' ')}
@@ -118,23 +118,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <a
                     href={link.href}
                     className={[
-                      'cp-sidebar__link',
-                      link.active ? 'cp-sidebar__link--active' : '',
+                      'pom-sidebar__link',
+                      link.active ? 'pom-sidebar__link--active' : '',
                     ]
                       .filter(Boolean)
                       .join(' ')}
                     aria-current={link.active ? 'page' : undefined}
                   >
                     {link.icon && (
-                      <span className="cp-sidebar__icon" aria-hidden="true">
+                      <span className="pom-sidebar__icon" aria-hidden="true">
                         {link.icon}
                       </span>
                     )}
                     {!collapsed && (
                       <>
-                        <span className="cp-sidebar__label">{link.label}</span>
+                        <span className="pom-sidebar__label">{link.label}</span>
                         {link.badge != null && (
-                          <span className="cp-sidebar__badge">{link.badge}</span>
+                          <span className="pom-sidebar__badge">{link.badge}</span>
                         )}
                       </>
                     )}

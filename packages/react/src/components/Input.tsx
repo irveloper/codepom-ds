@@ -8,9 +8,9 @@ export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> 
 }
 
 export const Label: React.FC<LabelProps> = ({ required, children, className = '', ...props }) => (
-  <label className={`cp-label ${className}`.trim()} {...props}>
+  <label className={`pom-label ${className}`.trim()} {...props}>
     {children}
-    {required && <span className="cp-label__required" aria-hidden="true"> *</span>}
+    {required && <span className="pom-label__required" aria-hidden="true"> *</span>}
   </label>
 )
 
@@ -28,11 +28,11 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ inputSize = 'md', error = false, leadingIcon, trailingIcon, className = '', ...props }, ref) => {
     const classes = [
-      'cp-input',
-      `cp-input--${inputSize}`,
-      error ? 'cp-input--error' : '',
-      leadingIcon ? 'cp-input--has-leading' : '',
-      trailingIcon ? 'cp-input--has-trailing' : '',
+      'pom-input',
+      `pom-input--${inputSize}`,
+      error ? 'pom-input--error' : '',
+      leadingIcon ? 'pom-input--has-leading' : '',
+      trailingIcon ? 'pom-input--has-trailing' : '',
       className,
     ]
       .filter(Boolean)
@@ -40,15 +40,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     if (leadingIcon || trailingIcon) {
       return (
-        <div className="cp-input-wrapper">
+        <div className="pom-input-wrapper">
           {leadingIcon && (
-            <span className="cp-input__icon cp-input__icon--leading" aria-hidden="true">
+            <span className="pom-input__icon pom-input__icon--leading" aria-hidden="true">
               {leadingIcon}
             </span>
           )}
           <input ref={ref} className={classes} aria-invalid={error || undefined} {...props} />
           {trailingIcon && (
-            <span className="cp-input__icon cp-input__icon--trailing" aria-hidden="true">
+            <span className="pom-input__icon pom-input__icon--trailing" aria-hidden="true">
               {trailingIcon}
             </span>
           )}
@@ -75,7 +75,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ error = false, resize = 'vertical', className = '', style, ...props }, ref) => (
     <textarea
       ref={ref}
-      className={['cp-textarea', error ? 'cp-textarea--error' : '', className].filter(Boolean).join(' ')}
+      className={['pom-textarea', error ? 'pom-textarea--error' : '', className].filter(Boolean).join(' ')}
       aria-invalid={error || undefined}
       style={{ resize, ...style }}
       {...props}
@@ -93,16 +93,16 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
 
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ error = false, className = '', children, ...props }, ref) => (
-    <div className="cp-select-wrapper">
+    <div className="pom-select-wrapper">
       <select
         ref={ref}
-        className={['cp-select', error ? 'cp-select--error' : '', className].filter(Boolean).join(' ')}
+        className={['pom-select', error ? 'pom-select--error' : '', className].filter(Boolean).join(' ')}
         aria-invalid={error || undefined}
         {...props}
       >
         {children}
       </select>
-      <span className="cp-select__chevron" aria-hidden="true">▾</span>
+      <span className="pom-select__chevron" aria-hidden="true">▾</span>
     </div>
   )
 )
@@ -130,14 +130,14 @@ export const Field: React.FC<FieldProps> = ({
   children,
   className = '',
 }) => (
-  <div className={`cp-field ${className}`.trim()}>
+  <div className={`pom-field ${className}`.trim()}>
     <Label htmlFor={htmlFor} required={required}>
       {label}
     </Label>
     {children}
-    {hint && !error && <p className="cp-field__hint">{hint}</p>}
+    {hint && !error && <p className="pom-field__hint">{hint}</p>}
     {error && (
-      <p className="cp-field__error" role="alert">
+      <p className="pom-field__error" role="alert">
         {error}
       </p>
     )}

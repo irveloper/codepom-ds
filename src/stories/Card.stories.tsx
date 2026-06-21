@@ -70,7 +70,7 @@ export const ElevationVariants: Story = {
                 Elevation {elevation}
               </p>
               <p style={{ margin: '4px 0 0', fontSize: 12, color: '#94A3B8' }}>
-                cp-card--elevation-{elevation}
+                pom-card--elevation-{elevation}
               </p>
             </CardBody>
           </Card>

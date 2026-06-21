@@ -59,11 +59,11 @@ export const Tabs: React.FC<TabsProps> = ({
   const activeTab = tabs.find((t) => t.id === active)
 
   return (
-    <div className={`cp-tabs cp-tabs--${variant} ${className}`.trim()}>
+    <div className={`pom-tabs pom-tabs--${variant} ${className}`.trim()}>
       <div
         ref={tablistRef}
         role="tablist"
-        className="cp-tabs__list"
+        className="pom-tabs__list"
       >
         {tabs.map((tab, i) => (
           <button
@@ -76,8 +76,8 @@ export const Tabs: React.FC<TabsProps> = ({
             disabled={tab.disabled}
             tabIndex={active === tab.id ? 0 : -1}
             className={[
-              'cp-tabs__tab',
-              active === tab.id ? 'cp-tabs__tab--active' : '',
+              'pom-tabs__tab',
+              active === tab.id ? 'pom-tabs__tab--active' : '',
             ]
               .filter(Boolean)
               .join(' ')}
@@ -85,13 +85,13 @@ export const Tabs: React.FC<TabsProps> = ({
             onKeyDown={(e) => handleKeyDown(e, i)}
           >
             {tab.icon && (
-              <span className="cp-tabs__tab-icon" aria-hidden="true">
+              <span className="pom-tabs__tab-icon" aria-hidden="true">
                 {tab.icon}
               </span>
             )}
             {tab.label}
             {tab.badge !== undefined && (
-              <span className="cp-tabs__badge">{tab.badge}</span>
+              <span className="pom-tabs__badge">{tab.badge}</span>
             )}
           </button>
         ))}
@@ -103,7 +103,7 @@ export const Tabs: React.FC<TabsProps> = ({
           id={`tabpanel-${tab.id}`}
           aria-labelledby={`tab-${tab.id}`}
           hidden={active !== tab.id}
-          className="cp-tabs__panel"
+          className="pom-tabs__panel"
         >
           {tab.content}
         </div>

@@ -11,22 +11,22 @@ describe('Card', () => {
 
   it('applies elevation class', () => {
     const { container } = render(<Card elevation={3}>x</Card>)
-    expect(container.firstChild).toHaveClass('cp-card--elevation-3')
+    expect(container.firstChild).toHaveClass('pom-card--elevation-3')
   })
 
   it('applies padding class', () => {
     const { container } = render(<Card padding="lg">x</Card>)
-    expect(container.firstChild).toHaveClass('cp-card--pad-lg')
+    expect(container.firstChild).toHaveClass('pom-card--pad-lg')
   })
 
   it('does not apply padding class when padding is none', () => {
     const { container } = render(<Card padding="none">x</Card>)
-    expect(container.firstChild).not.toHaveClass('cp-card--pad-none')
+    expect(container.firstChild).not.toHaveClass('pom-card--pad-none')
   })
 
   it('applies interactive class', () => {
     const { container } = render(<Card interactive>x</Card>)
-    expect(container.firstChild).toHaveClass('cp-card--interactive')
+    expect(container.firstChild).toHaveClass('pom-card--interactive')
   })
 
   it('renders as custom element via as prop', () => {
@@ -44,7 +44,7 @@ describe('CardHeader', () => {
   it('renders children in header div', () => {
     render(<CardHeader>Header</CardHeader>)
     expect(screen.getByText('Header')).toBeInTheDocument()
-    expect(document.querySelector('.cp-card__header')).toBeInTheDocument()
+    expect(document.querySelector('.pom-card__header')).toBeInTheDocument()
   })
 })
 
@@ -52,7 +52,7 @@ describe('CardBody', () => {
   it('renders children in body div', () => {
     render(<CardBody>Body</CardBody>)
     expect(screen.getByText('Body')).toBeInTheDocument()
-    expect(document.querySelector('.cp-card__body')).toBeInTheDocument()
+    expect(document.querySelector('.pom-card__body')).toBeInTheDocument()
   })
 })
 
@@ -60,6 +60,6 @@ describe('CardFooter', () => {
   it('renders children in footer div', () => {
     render(<CardFooter>Footer</CardFooter>)
     expect(screen.getByText('Footer')).toBeInTheDocument()
-    expect(document.querySelector('.cp-card__footer')).toBeInTheDocument()
+    expect(document.querySelector('.pom-card__footer')).toBeInTheDocument()
   })
 })

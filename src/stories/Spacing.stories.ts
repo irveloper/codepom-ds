@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Spacing',
@@ -7,25 +8,25 @@ const meta: Meta = {
 export default meta;
 
 const steps = [
-  { token: '--cp-space-0',  px: '0px',  step: 0  },
-  { token: '--cp-space-1',  px: '4px',  step: 1  },
-  { token: '--cp-space-2',  px: '8px',  step: 2  },
-  { token: '--cp-space-3',  px: '12px', step: 3  },
-  { token: '--cp-space-4',  px: '16px', step: 4  },
-  { token: '--cp-space-5',  px: '20px', step: 5  },
-  { token: '--cp-space-6',  px: '24px', step: 6  },
-  { token: '--cp-space-8',  px: '32px', step: 8  },
-  { token: '--cp-space-10', px: '40px', step: 10 },
-  { token: '--cp-space-12', px: '48px', step: 12 },
-  { token: '--cp-space-16', px: '64px', step: 16 },
-  { token: '--cp-space-20', px: '80px', step: 20 },
-  { token: '--cp-space-24', px: '96px', step: 24 },
+  { token: '--pom-space-0',  px: '0px',  step: 0  },
+  { token: '--pom-space-1',  px: '4px',  step: 1  },
+  { token: '--pom-space-2',  px: '8px',  step: 2  },
+  { token: '--pom-space-3',  px: '12px', step: 3  },
+  { token: '--pom-space-4',  px: '16px', step: 4  },
+  { token: '--pom-space-5',  px: '20px', step: 5  },
+  { token: '--pom-space-6',  px: '24px', step: 6  },
+  { token: '--pom-space-8',  px: '32px', step: 8  },
+  { token: '--pom-space-10', px: '40px', step: 10 },
+  { token: '--pom-space-12', px: '48px', step: 12 },
+  { token: '--pom-space-16', px: '64px', step: 16 },
+  { token: '--pom-space-20', px: '80px', step: 20 },
+  { token: '--pom-space-24', px: '96px', step: 24 },
 ];
 
 export const Scale: StoryObj = {
   name: 'Scale',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:40px;min-height:100vh;">
       <div style="max-width:780px;margin:0 auto;">
         <h1 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0 0 8px;">Spacing</h1>
@@ -53,14 +54,14 @@ export const Scale: StoryObj = {
           <h3 style="font-size:14px;font-family:'Space Mono',monospace;color:#94A3B8;letter-spacing:0.08em;margin:0 0 20px;">USAGE GUIDE</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             ${[
-              { use: 'Icon gap',         token: '--cp-space-1', px: '4px'  },
-              { use: 'Inline gap',       token: '--cp-space-2', px: '8px'  },
-              { use: 'Button padding-x', token: '--cp-space-4', px: '16px' },
-              { use: 'Card padding',     token: '--cp-space-6', px: '24px' },
-              { use: 'Section gap',      token: '--cp-space-8', px: '32px' },
-              { use: 'Page padding',     token: '--cp-space-10',px: '40px' },
-              { use: 'Section spacer',   token: '--cp-space-16',px: '64px' },
-              { use: 'Hero gap',         token: '--cp-space-24',px: '96px' },
+              { use: 'Icon gap',         token: '--pom-space-1', px: '4px'  },
+              { use: 'Inline gap',       token: '--pom-space-2', px: '8px'  },
+              { use: 'Button padding-x', token: '--pom-space-4', px: '16px' },
+              { use: 'Card padding',     token: '--pom-space-6', px: '24px' },
+              { use: 'Section gap',      token: '--pom-space-8', px: '32px' },
+              { use: 'Page padding',     token: '--pom-space-10',px: '40px' },
+              { use: 'Section spacer',   token: '--pom-space-16',px: '64px' },
+              { use: 'Hero gap',         token: '--pom-space-24',px: '96px' },
             ].map(r => `
               <div style="background:#08192E;border:1px solid #1C2541;border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;">
                 <span style="font-size:13px;color:#94A3B8;">${r.use}</span>
@@ -71,13 +72,13 @@ export const Scale: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };
 
 export const Playground: StoryObj = {
   name: 'Playground',
   parameters: { layout: 'centered' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#08192E;border:1px solid #1C2541;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:0;min-width:420px;">
       <p style="font-family:'Space Mono',monospace;font-size:11px;color:#64748B;margin:0 0 20px;letter-spacing:0.06em;">SPACING IN CONTEXT</p>
       <div style="display:flex;flex-direction:column;gap:0;">
@@ -93,5 +94,5 @@ export const Playground: StoryObj = {
         }).join('')}
       </div>
     </div>
-  `,
+  `),
 };

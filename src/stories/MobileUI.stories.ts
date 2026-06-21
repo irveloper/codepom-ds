@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Applications/Mobile UI',
@@ -8,7 +9,7 @@ export default meta;
 
 export const PhoneScreen: StoryObj = {
   parameters: { layout: 'centered' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start;font-family:'Space Grotesk',sans-serif;">
       <div style="width:280px;height:570px;border-radius:38px;background:#000;padding:11px;box-shadow:0 24px 60px rgba(0,0,0,0.5);flex:none;">
         <div style="width:100%;height:100%;border-radius:28px;background:#0B132B;overflow:hidden;position:relative;display:flex;flex-direction:column;">
@@ -62,5 +63,5 @@ export const PhoneScreen: StoryObj = {
         </ul>
       </div>
     </div>
-  `,
+  `),
 };

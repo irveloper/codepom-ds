@@ -16,14 +16,14 @@ export const Tooltip: React.FC<TooltipProps> = ({
   const id = React.useId()
 
   return (
-    <span className={`cp-tooltip-host cp-tooltip-host--${placement}`}>
+    <span className={`pom-tooltip-host pom-tooltip-host--${placement}`}>
       {React.cloneElement(children, {
         'aria-describedby': id,
       })}
       <span
         role="tooltip"
         id={id}
-        className={`cp-tooltip cp-tooltip--${placement}`}
+        className={`pom-tooltip pom-tooltip--${placement}`}
       >
         {content}
       </span>

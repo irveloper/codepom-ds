@@ -69,6 +69,6 @@ describe('Tabs', () => {
 
   it.each(['underline', 'pill', 'boxed'] as const)('applies %s variant class', (variant) => {
     render(<Tabs tabs={tabs} variant={variant} />)
-    expect(document.querySelector(`.cp-tabs--${variant}`)).toBeInTheDocument()
+    expect(document.querySelector(`.pom-tabs--${variant}`)).toBeInTheDocument()
   })
 })

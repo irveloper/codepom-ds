@@ -19,10 +19,10 @@ export const Badge: React.FC<BadgeProps> = ({
   className = '',
 }) => {
   const classes = [
-    'cp-badge',
-    `cp-badge--${variant}`,
-    size === 'sm' ? 'cp-badge--sm' : '',
-    dot ? 'cp-badge--dot' : '',
+    'pom-badge',
+    `pom-badge--${variant}`,
+    size === 'sm' ? 'pom-badge--sm' : '',
+    dot ? 'pom-badge--dot' : '',
     className,
   ]
     .filter(Boolean)

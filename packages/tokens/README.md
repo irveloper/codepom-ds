@@ -12,7 +12,7 @@ npm install @codepom/tokens
 
 | Import path | Contents |
 |-------------|----------|
-| `@codepom/tokens/css` | CSS custom properties (`--cp-*`) — colors, spacing, radius, shadows, motion, typography |
+| `@codepom/tokens/css` | CSS custom properties (`--pom-*`) — colors, spacing, radius, shadows, motion, typography |
 | `@codepom/tokens/reset` | Minimal CSS reset (box-sizing, focus-visible, sr-only) |
 | `@codepom/tokens/js` | JavaScript token constants |
 | `@codepom/tokens/tailwind` | Tailwind CSS preset |
@@ -24,26 +24,26 @@ npm install @codepom/tokens
 @import '@codepom/tokens/reset'; /* optional */
 ```
 
-Tokens are prefixed with `--cp-`:
+Tokens are prefixed with `--pom-`:
 
 ```css
 /* Colors */
---cp-navy-950, --cp-navy-900 ... --cp-navy-100
---cp-amber-400, --cp-amber-500, --cp-amber-600
---cp-cyan-400, --cp-cyan-500
---cp-ivory-50 ... --cp-ivory-200
+--pom-navy-950, --pom-navy-900 ... --pom-navy-100
+--pom-amber-400, --pom-amber-500, --pom-amber-600
+--pom-cyan-400, --pom-cyan-500
+--pom-ivory-50 ... --pom-ivory-200
 
 /* Semantic */
---cp-background, --cp-foreground, --cp-muted, --cp-card
+--pom-background, --pom-foreground, --pom-muted, --pom-card
 
 /* Spacing */
---cp-space-1 (4px) ... --cp-space-16 (64px)
+--pom-space-1 (4px) ... --pom-space-16 (64px)
 
 /* Typography */
---cp-font-sans, --cp-font-mono
+--pom-font-sans, --pom-font-mono
 
 /* Motion */
---cp-duration-fast, --cp-duration-base, --cp-ease-out, --cp-ease-in-out
+--pom-duration-fast, --pom-duration-base, --pom-ease-out, --pom-ease-in-out
 ```
 
 ## JavaScript

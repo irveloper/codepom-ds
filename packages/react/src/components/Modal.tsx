@@ -53,28 +53,28 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <dialog
       ref={dialogRef}
-      className={['cp-modal-backdrop', className].filter(Boolean).join(' ')}
+      className={['pom-modal-backdrop', className].filter(Boolean).join(' ')}
       onClick={handleBackdropClick}
       aria-labelledby={title ? titleId : undefined}
       aria-modal="true"
     >
-      <div className={`cp-modal cp-modal--${size}`}>
-        <div className="cp-modal__header">
+      <div className={`pom-modal pom-modal--${size}`}>
+        <div className="pom-modal__header">
           {title && (
-            <h2 id={titleId} className="cp-modal__title">
+            <h2 id={titleId} className="pom-modal__title">
               {title}
             </h2>
           )}
           <button
-            className="cp-modal__close"
+            className="pom-modal__close"
             onClick={onClose}
             aria-label="Close modal"
           >
             ✕
           </button>
         </div>
-        <div className="cp-modal__body">{children}</div>
-        {footer && <div className="cp-modal__footer">{footer}</div>}
+        <div className="pom-modal__body">{children}</div>
+        {footer && <div className="pom-modal__footer">{footer}</div>}
       </div>
     </dialog>
   )

@@ -12,12 +12,12 @@ describe('Button', () => {
 
   it.each(['primary', 'secondary', 'ghost', 'danger'] as const)('applies %s variant class', (variant) => {
     render(<Button variant={variant}>btn</Button>)
-    expect(screen.getByRole('button')).toHaveClass(`cp-btn--${variant}`)
+    expect(screen.getByRole('button')).toHaveClass(`pom-btn--${variant}`)
   })
 
   it.each(['sm', 'md', 'lg'] as const)('applies %s size class', (size) => {
     render(<Button size={size}>btn</Button>)
-    expect(screen.getByRole('button')).toHaveClass(`cp-btn--${size}`)
+    expect(screen.getByRole('button')).toHaveClass(`pom-btn--${size}`)
   })
 
   it('is disabled when disabled prop set', () => {
@@ -30,12 +30,12 @@ describe('Button', () => {
     const btn = screen.getByRole('button')
     expect(btn).toBeDisabled()
     expect(btn).toHaveAttribute('aria-busy', 'true')
-    expect(btn).toHaveClass('cp-btn--loading')
+    expect(btn).toHaveClass('pom-btn--loading')
   })
 
-  it('applies cp-btn--full when fullWidth', () => {
+  it('applies pom-btn--full when fullWidth', () => {
     render(<Button fullWidth>btn</Button>)
-    expect(screen.getByRole('button')).toHaveClass('cp-btn--full')
+    expect(screen.getByRole('button')).toHaveClass('pom-btn--full')
   })
 
   it('calls onClick handler', async () => {

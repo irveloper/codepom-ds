@@ -12,7 +12,7 @@ describe('Alert', () => {
 
   it.each(['info', 'success', 'warning', 'error'] as const)('applies %s variant class', (variant) => {
     render(<Alert variant={variant}>msg</Alert>)
-    expect(screen.getByRole('alert')).toHaveClass(`cp-alert--${variant}`)
+    expect(screen.getByRole('alert')).toHaveClass(`pom-alert--${variant}`)
   })
 
   it('renders title when provided', () => {

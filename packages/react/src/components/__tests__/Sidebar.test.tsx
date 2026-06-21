@@ -40,7 +40,7 @@ describe('Sidebar', () => {
 
   it('applies collapsed class when collapsed', () => {
     render(<Sidebar links={links} collapsed />)
-    expect(document.querySelector('.cp-sidebar--collapsed')).toBeInTheDocument()
+    expect(document.querySelector('.pom-sidebar--collapsed')).toBeInTheDocument()
   })
 
   it('renders collapse toggle when onCollapse provided', () => {

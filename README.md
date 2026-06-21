@@ -128,15 +128,15 @@ The system uses **Space Grotesk** (sans) and **Space Mono** (mono).
 
 ## Design Tokens
 
-All tokens are exposed as CSS custom properties (`--cp-*`) and as JavaScript constants. A Tailwind preset is also provided.
+All tokens are exposed as CSS custom properties (`--pom-*`) and as JavaScript constants. A Tailwind preset is also provided.
 
 | Category | Tokens |
 |----------|--------|
-| **Colors** | Navy palette (`--cp-navy-950`…`100`), amber accents (`--cp-amber-400/500/600`), cyan accents (`--cp-cyan-400/500`), ivory surfaces (`--cp-ivory-50/100/200`) |
-| **Semantic** | `--cp-background`, `--cp-foreground`, `--cp-card`, `--cp-primary`, `--cp-secondary`, `--cp-accent`, `--cp-border`, `--cp-success`, `--cp-warning`, `--cp-error`, `--cp-text-primary`, `--cp-text-secondary`, `--cp-text-tertiary`, `--cp-text-on-primary` |
-| **Spacing** | 8pt grid: `--cp-space-1` (4px) through `--cp-space-24` (96px) |
-| **Radius** | `--cp-radius-sm` (6px), `md` (8px), `lg` (12px), `xl` (14px), `full` (9999px) |
-| **Elevation** | `--cp-shadow-0` through `--cp-shadow-5` — navy-tinted layered shadows |
+| **Colors** | Navy palette (`--pom-navy-950`…`100`), amber accents (`--pom-amber-400/500/600`), cyan accents (`--pom-cyan-400/500`), ivory surfaces (`--pom-ivory-50/100/200`) |
+| **Semantic** | `--pom-background`, `--pom-foreground`, `--pom-card`, `--pom-primary`, `--pom-secondary`, `--pom-accent`, `--pom-border`, `--pom-success`, `--pom-warning`, `--pom-error`, `--pom-text-primary`, `--pom-text-secondary`, `--pom-text-tertiary`, `--pom-text-on-primary` |
+| **Spacing** | 8pt grid: `--pom-space-1` (4px) through `--pom-space-24` (96px) |
+| **Radius** | `--pom-radius-sm` (6px), `md` (8px), `lg` (12px), `xl` (14px), `full` (9999px) |
+| **Elevation** | `--pom-shadow-0` through `--pom-shadow-5` — navy-tinted layered shadows |
 | **Motion** | Duration tokens (`instant` 0ms – `slow` 350ms) and easing curves (`out`, `in`, `in-out`, `spring`) |
 
 ## Accessibility
@@ -212,7 +212,7 @@ codepom-design-system/
 | Area | Technology |
 |------|------------|
 | Components | React 18 + TypeScript (strict) |
-| Styling | Tailwind CSS v4 + plain CSS (BEM convention, `cp-` prefix) |
+| Styling | Tailwind CSS v4 + plain CSS (BEM convention, `pom-` prefix) |
 | Build | tsup (ESM + CJS + DTS) |
 | Monorepo | pnpm workspaces |
 | Test | Vitest + jsdom + Testing Library |

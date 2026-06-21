@@ -37,23 +37,23 @@ describe('Breadcrumb', () => {
 
   it('renders chevron separator by default', () => {
     render(<Breadcrumb items={items} />)
-    expect(document.querySelectorAll('.cp-breadcrumb__sep')).toHaveLength(2)
+    expect(document.querySelectorAll('.pom-breadcrumb__sep')).toHaveLength(2)
   })
 
   it('renders slash separator', () => {
     render(<Breadcrumb items={items} separator="slash" />)
-    const seps = document.querySelectorAll('.cp-breadcrumb__sep')
+    const seps = document.querySelectorAll('.pom-breadcrumb__sep')
     expect(seps[0]).toHaveTextContent('/')
   })
 
   it('renders dot separator', () => {
     render(<Breadcrumb items={items} separator="dot" />)
-    const seps = document.querySelectorAll('.cp-breadcrumb__sep')
+    const seps = document.querySelectorAll('.pom-breadcrumb__sep')
     expect(seps[0]).toHaveTextContent('·')
   })
 
   it('renders single item without separator', () => {
     render(<Breadcrumb items={[{ label: 'Home' }]} />)
-    expect(document.querySelectorAll('.cp-breadcrumb__sep')).toHaveLength(0)
+    expect(document.querySelectorAll('.pom-breadcrumb__sep')).toHaveLength(0)
   })
 })

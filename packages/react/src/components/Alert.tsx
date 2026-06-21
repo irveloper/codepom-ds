@@ -35,7 +35,7 @@ export const Alert: React.FC<AlertProps> = ({
 
   if (dismissed) return null
 
-  const classes = ['cp-alert', `cp-alert--${variant}`, className]
+  const classes = ['pom-alert', `pom-alert--${variant}`, className]
     .filter(Boolean)
     .join(' ')
 
@@ -44,16 +44,16 @@ export const Alert: React.FC<AlertProps> = ({
       role="alert"
       className={classes}
     >
-      <span className="cp-alert__icon" aria-hidden="true">
+      <span className="pom-alert__icon" aria-hidden="true">
         {icons[variant]}
       </span>
-      <div className="cp-alert__body">
-        {title && <p className="cp-alert__title">{title}</p>}
-        <div className="cp-alert__content">{children}</div>
+      <div className="pom-alert__body">
+        {title && <p className="pom-alert__title">{title}</p>}
+        <div className="pom-alert__content">{children}</div>
       </div>
       {dismissible && (
         <button
-          className="cp-alert__close"
+          className="pom-alert__close"
           onClick={handleDismiss}
           aria-label="Dismiss alert"
         >

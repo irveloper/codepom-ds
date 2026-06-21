@@ -54,13 +54,13 @@ describe('Popover', () => {
 
   it('trigger has aria-expanded false when closed', () => {
     setup()
-    expect(document.querySelector('.cp-popover-trigger')).toHaveAttribute('aria-expanded', 'false')
+    expect(document.querySelector('.pom-popover-trigger')).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('trigger has aria-expanded true when open', async () => {
     setup()
     await userEvent.click(screen.getByRole('button', { name: 'Open' }))
-    expect(document.querySelector('.cp-popover-trigger')).toHaveAttribute('aria-expanded', 'true')
+    expect(document.querySelector('.pom-popover-trigger')).toHaveAttribute('aria-expanded', 'true')
   })
 
   it.each(['top', 'bottom', 'left', 'right'] as const)('applies %s placement class', async (placement) => {
@@ -70,6 +70,6 @@ describe('Popover', () => {
       </Popover>
     )
     await userEvent.click(screen.getByRole('button', { name: 'Open' }))
-    expect(document.querySelector(`.cp-popover--${placement}`)).toBeInTheDocument()
+    expect(document.querySelector(`.pom-popover--${placement}`)).toBeInTheDocument()
   })
 })

@@ -31,17 +31,17 @@ describe('Avatar', () => {
 
   it.each(['xs', 'sm', 'md', 'lg', 'xl'] as const)('applies %s size class', (size) => {
     render(<Avatar name="A" size={size} />)
-    expect(screen.getByRole('img')).toHaveClass(`cp-avatar--${size}`)
+    expect(screen.getByRole('img')).toHaveClass(`pom-avatar--${size}`)
   })
 
   it('renders status indicator when status is not none', () => {
     render(<Avatar name="A" status="online" />)
-    expect(document.querySelector('.cp-avatar__status--online')).toBeInTheDocument()
+    expect(document.querySelector('.pom-avatar__status--online')).toBeInTheDocument()
   })
 
   it('does not render status when status is none', () => {
     render(<Avatar name="A" status="none" />)
-    expect(document.querySelector('.cp-avatar__status')).not.toBeInTheDocument()
+    expect(document.querySelector('.pom-avatar__status')).not.toBeInTheDocument()
   })
 
   it('uses alt as aria-label when provided', () => {

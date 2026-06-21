@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Elevation',
@@ -9,42 +10,42 @@ export default meta;
 const levels = [
   {
     level: 0,
-    token: '--cp-shadow-0',
+    token: '--pom-shadow-0',
     shadow: 'none',
     use: 'Flat surface',
     desc: 'Inline elements, disabled states, table rows',
   },
   {
     level: 1,
-    token: '--cp-shadow-1',
+    token: '--pom-shadow-1',
     shadow: '0 1px 2px 0 rgba(5,10,24,0.4)',
     use: 'Resting card',
     desc: 'Default cards, input fields, badges',
   },
   {
     level: 2,
-    token: '--cp-shadow-2',
+    token: '--pom-shadow-2',
     shadow: '0 2px 8px 0 rgba(5,10,24,0.5), 0 1px 2px 0 rgba(5,10,24,0.3)',
     use: 'Raised element',
     desc: 'Dropdowns, select menus, hover states',
   },
   {
     level: 3,
-    token: '--cp-shadow-3',
+    token: '--pom-shadow-3',
     shadow: '0 4px 16px 0 rgba(5,10,24,0.6), 0 2px 4px 0 rgba(5,10,24,0.3)',
     use: 'Floating panel',
     desc: 'Tooltips, popovers, date pickers',
   },
   {
     level: 4,
-    token: '--cp-shadow-4',
+    token: '--pom-shadow-4',
     shadow: '0 8px 32px 0 rgba(5,10,24,0.7), 0 4px 8px 0 rgba(5,10,24,0.4)',
     use: 'Modal / Drawer',
     desc: 'Dialog boxes, side sheets, sticky headers',
   },
   {
     level: 5,
-    token: '--cp-shadow-5',
+    token: '--pom-shadow-5',
     shadow: '0 16px 48px 0 rgba(5,10,24,0.8), 0 8px 16px 0 rgba(5,10,24,0.5)',
     use: 'Spotlight',
     desc: 'Command palette, full-screen overlays',
@@ -54,7 +55,7 @@ const levels = [
 export const Scale: StoryObj = {
   name: 'Scale',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:40px;min-height:100vh;">
       <div style="max-width:820px;margin:0 auto;">
         <h1 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0 0 8px;">Elevation</h1>
@@ -89,13 +90,13 @@ export const Scale: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };
 
 export const InContext: StoryObj = {
   name: 'In Context',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:60px 40px;min-height:100vh;position:relative;">
       <div style="max-width:680px;margin:0 auto;position:relative;">
         <p style="font-family:'Space Mono',monospace;font-size:11px;color:#3A506B;letter-spacing:0.06em;margin:0 0 40px;">REAL-WORLD STACKING</p>
@@ -147,5 +148,5 @@ export const InContext: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };
