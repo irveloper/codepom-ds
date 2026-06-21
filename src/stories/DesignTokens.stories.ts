@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Colors & Tokens',
@@ -10,7 +11,7 @@ export const ColorPalette: StoryObj = {
   parameters: {
     layout: 'fullscreen',
   },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:40px;min-height:100vh;">
       <div style="max-width:800px;margin:0 auto;">
         <h1 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0 0 10px;">Colors & Tokens</h1>
@@ -79,5 +80,5 @@ export const ColorPalette: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };

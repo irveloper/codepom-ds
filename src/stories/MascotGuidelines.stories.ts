@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Logo & Mascot/Guidelines',
@@ -8,7 +9,7 @@ export default meta;
 
 export const DoDont: StoryObj = {
   parameters: { layout: 'centered' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-family:'Space Grotesk',sans-serif;">
       <div style="border:1px solid #14532d;border-radius:12px;background:#08192E;padding:20px;display:flex;align-items:center;gap:16px;">
         <div style="width:54px;height:54px;flex:none;">
@@ -35,12 +36,12 @@ export const DoDont: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };
 
 export const Lockup: StoryObj = {
   parameters: { layout: 'centered' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="display:flex;gap:20px;flex-wrap:wrap;font-family:'Space Grotesk',sans-serif;">
       <div style="border:1px solid #1C2541;border-radius:12px;background:#08192E;padding:30px;display:flex;align-items:center;gap:20px;">
         <img src="/logo.svg" width="64" height="64" alt="CodePom mascot" style="object-fit:contain;" />
@@ -65,5 +66,5 @@ export const Lockup: StoryObj = {
         <div style="font-family:'Space Mono',monospace;font-size:11px;color:#64748B;">48 · 32 · 16px</div>
       </div>
     </div>
-  `,
+  `),
 };

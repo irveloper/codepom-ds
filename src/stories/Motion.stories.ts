@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Motion',
@@ -9,7 +10,7 @@ export default meta;
 export const Scale: StoryObj = {
   name: 'Scale',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <style>
       @keyframes pom-slide-in {
         from { opacity: 0; transform: translateY(6px); }
@@ -94,5 +95,5 @@ export const Scale: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };

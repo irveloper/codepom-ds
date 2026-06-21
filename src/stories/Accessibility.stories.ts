@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Accessibility',
@@ -16,7 +17,7 @@ const swatch = (hex: string) =>
 export const ContrastAudit: StoryObj = {
   name: 'Contrast Audit',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;padding:40px;min-height:100vh;color:#F8FAFC;">
       <div style="max-width:820px;margin:0 auto;">
         <h1 style="font-size:28px;font-weight:700;margin:0 0 6px;">Accessibility — Contrast Audit</h1>
@@ -72,13 +73,13 @@ export const ContrastAudit: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };
 
 export const FocusRings: StoryObj = {
   name: 'Focus Rings',
   parameters: { layout: 'centered' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;padding:40px;border-radius:16px;min-width:480px;">
       <p style="font-family:'Space Mono',monospace;font-size:11px;color:#3A506B;letter-spacing:0.06em;margin:0 0 20px;">TAB THROUGH TO SEE FOCUS RINGS</p>
       <div style="display:flex;flex-direction:column;gap:14px;">
@@ -108,13 +109,13 @@ export const FocusRings: StoryObj = {
         border-radius: 6px;
       }
     </style>
-  `,
+  `),
 };
 
 export const ReducedMotion: StoryObj = {
   name: 'Reduced Motion',
   parameters: { layout: 'centered' },
-  render: () => `
+  render: () => renderHTML(`
     <style>
       @keyframes pom-spin { to { transform: rotate(360deg); } }
       @keyframes pom-pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
@@ -163,13 +164,13 @@ export const ReducedMotion: StoryObj = {
 }</code></pre>
       </div>
     </div>
-  `,
+  `),
 };
 
 export const ARIAPatterns: StoryObj = {
   name: 'ARIA Patterns',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;padding:40px;min-height:100vh;color:#F8FAFC;">
       <div style="max-width:780px;margin:0 auto;">
         <h1 style="font-size:28px;font-weight:700;margin:0 0 6px;">ARIA Patterns</h1>
@@ -213,5 +214,5 @@ export const ARIAPatterns: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };

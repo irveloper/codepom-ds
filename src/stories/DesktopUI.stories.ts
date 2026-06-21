@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Applications/Desktop UI',
@@ -8,7 +9,7 @@ export default meta;
 
 export const Dashboard: StoryObj = {
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="border-radius:14px;overflow:hidden;border:1px solid #1C2541;box-shadow:0 24px 60px rgba(0,0,0,0.45);font-family:'Space Grotesk',sans-serif;">
       <div style="height:38px;background:#08192E;border-bottom:1px solid #1C2541;display:flex;align-items:center;gap:8px;padding:0 14px;">
         <span style="width:11px;height:11px;border-radius:50%;background:#EA580C;"></span>
@@ -58,5 +59,5 @@ export const Dashboard: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };

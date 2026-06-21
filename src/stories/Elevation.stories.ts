@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Elevation',
@@ -54,7 +55,7 @@ const levels = [
 export const Scale: StoryObj = {
   name: 'Scale',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:40px;min-height:100vh;">
       <div style="max-width:820px;margin:0 auto;">
         <h1 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0 0 8px;">Elevation</h1>
@@ -89,13 +90,13 @@ export const Scale: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };
 
 export const InContext: StoryObj = {
   name: 'In Context',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:60px 40px;min-height:100vh;position:relative;">
       <div style="max-width:680px;margin:0 auto;position:relative;">
         <p style="font-family:'Space Mono',monospace;font-size:11px;color:#3A506B;letter-spacing:0.06em;margin:0 0 40px;">REAL-WORLD STACKING</p>
@@ -147,5 +148,5 @@ export const InContext: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook-astro/framework';
+import { renderHTML } from './_renderHTML'
 
 const meta: Meta = {
   title: 'Foundations/Spacing',
@@ -25,7 +26,7 @@ const steps = [
 export const Scale: StoryObj = {
   name: 'Scale',
   parameters: { layout: 'fullscreen' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#0B132B;color:#F8FAFC;padding:40px;min-height:100vh;">
       <div style="max-width:780px;margin:0 auto;">
         <h1 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0 0 8px;">Spacing</h1>
@@ -71,13 +72,13 @@ export const Scale: StoryObj = {
         </div>
       </div>
     </div>
-  `,
+  `),
 };
 
 export const Playground: StoryObj = {
   name: 'Playground',
   parameters: { layout: 'centered' },
-  render: () => `
+  render: () => renderHTML(`
     <div style="font-family:'Space Grotesk',sans-serif;background:#08192E;border:1px solid #1C2541;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:0;min-width:420px;">
       <p style="font-family:'Space Mono',monospace;font-size:11px;color:#64748B;margin:0 0 20px;letter-spacing:0.06em;">SPACING IN CONTEXT</p>
       <div style="display:flex;flex-direction:column;gap:0;">
@@ -93,5 +94,5 @@ export const Playground: StoryObj = {
         }).join('')}
       </div>
     </div>
-  `,
+  `),
 };
