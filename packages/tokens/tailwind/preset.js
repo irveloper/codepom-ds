@@ -27,7 +27,7 @@ const preset = {
       borderRadius: {
         sm: 'var(--pom-radius-sm, 6px)', md: 'var(--pom-radius-md, 8px)',
         lg: 'var(--pom-radius-lg, 12px)', xl: 'var(--pom-radius-xl, 14px)',
-        full: 'var(--pom-radius-full, 9999px)',
+        // `rounded-full` stays Tailwind's 9999px: it means "circle/pill", which themes must not square off.
       },
       boxShadow: {
         'pom-1': 'var(--pom-shadow-1, 0 1px 2px 0 rgba(5,10,24,0.4))',
