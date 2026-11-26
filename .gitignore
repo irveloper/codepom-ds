@@ -3,7 +3,6 @@ dist/
 
 # generated types
 .astro/
-.storybook/
 
 # dependencies
 node_modules/

@@ -24,9 +24,23 @@ import '@codepom/tokens/reset' // optional: minimal CSS reset
 import '@codepom/react/styles' // component styles
 ```
 
+#### Themes
+
+Themes restyle every component without touching markup. Import the theme after the base styles and set the attribute on any ancestor (usually `<html>`):
+
+```ts
+import '@codepom/react/themes/blueprint.css'
+```
+
+```html
+<html data-pom-theme="blueprint">
+```
+
+`blueprint` — sharp corners, dashed rules, monospace uppercase labels, flat cards and underline form fields. Themes mostly override token knobs (`--pom-radius-*`, `--pom-border-style`, `--pom-font-label`, `--pom-label-transform`, `--pom-label-tracking`), so you can tune them the same way.
+
 ### 2. Tailwind (optional)
 
-If you use Tailwind CSS, add the CodePom preset to your config:
+If you use Tailwind CSS, add the CodePom preset to your config. Components ship their own CSS, so you don't need to scan `node_modules`:
 
 ```js
 // tailwind.config.js
@@ -34,12 +48,11 @@ import codepomPreset from '@codepom/tokens/tailwind'
 
 export default {
   presets: [codepomPreset],
-  content: [
-    './src/**/*.{ts,tsx}',
-    './node_modules/@codepom/react/dist/**/*.js',
-  ],
+  content: ['./src/**/*.{ts,tsx}'],
 }
 ```
+
+The brand showcase components (`Pattern`, `BrandPrinciples`, `BusinessCard`) still use Tailwind utilities. If you render them, also add `'./node_modules/@codepom/react/dist/**/*.js'` to `content`.
 
 ### 3. Fonts
 
@@ -87,7 +100,7 @@ function Page() {
 
 | Component | Description |
 |-----------|-------------|
-| `Button` | Primary, secondary, accent, outline, ghost, destructive variants |
+| `Button` | Primary, secondary, outline, ghost, danger variants; renders an `<a>` when given `href` |
 | `Badge` | Inline status labels with 7 variants |
 | `Alert` | Info, success, warning, error banners |
 | `Avatar` | User avatars with status indicators and size options |
@@ -97,11 +110,11 @@ function Page() {
 | `Radio` | Controlled/uncontrolled radio button |
 | `Toggle` | On/off toggle switch |
 | `Modal` | Accessible `<dialog>`-based modal with sizes |
-| `Tabs` | Underline and pill tab variants |
+| `Tabs` | Underline, pill and boxed tab variants |
 | `Tooltip` | Hover tooltip with placement options |
 | `Popover` | Click-triggered popover with outside-click dismiss |
 | `ToastProvider` / `useToast` | Global toast notifications |
-| `Navbar` | Top navigation bar |
+| `Navbar` | Top navigation with links, mega-menu panels (`menus`) and a mobile drill-down drawer |
 | `Sidebar` | Collapsible sidebar with nested links |
 | `Breadcrumb` | Accessible breadcrumb navigation |
 | `Pagination` | Page navigation controls |

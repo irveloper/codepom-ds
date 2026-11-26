@@ -7,7 +7,7 @@ import { Toggle } from '../Toggle'
 describe('Toggle', () => {
   it('renders checkbox input', () => {
     render(<Toggle />)
-    expect(screen.getByRole('checkbox')).toBeInTheDocument()
+    expect(screen.getByRole('switch')).toBeInTheDocument()
   })
 
   it('renders label text', () => {
@@ -22,23 +22,23 @@ describe('Toggle', () => {
 
   it('is checked when checked prop true', () => {
     render(<Toggle checked onChange={vi.fn()} />)
-    expect(screen.getByRole('checkbox')).toBeChecked()
+    expect(screen.getByRole('switch')).toBeChecked()
   })
 
   it('is disabled when disabled prop set', () => {
     render(<Toggle disabled />)
-    expect(screen.getByRole('checkbox')).toBeDisabled()
+    expect(screen.getByRole('switch')).toBeDisabled()
   })
 
   it('calls onChange with new value', async () => {
     const onChange = vi.fn()
     render(<Toggle onChange={onChange} />)
-    await userEvent.click(screen.getByRole('checkbox'))
+    await userEvent.click(screen.getByRole('switch'))
     expect(onChange).toHaveBeenCalledWith(true)
   })
 
   it('uses defaultChecked for uncontrolled mode', () => {
     render(<Toggle defaultChecked />)
-    expect(screen.getByRole('checkbox')).toBeChecked()
+    expect(screen.getByRole('switch')).toBeChecked()
   })
 })

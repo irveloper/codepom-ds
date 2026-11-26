@@ -7,28 +7,31 @@ export interface ToggleProps {
   defaultChecked?: boolean
   onChange?: (checked: boolean) => void
   disabled?: boolean
+  name?: string
   className?: string
 }
 
-export const Toggle = ({ label, hint, checked, defaultChecked, onChange, disabled, className }: ToggleProps) => (
-  <label className={`flex items-center justify-between gap-[12px] cursor-pointer select-none ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className ?? ''}`}>
+export const Toggle = ({ label, hint, checked, defaultChecked, onChange, disabled, name, className }: ToggleProps) => (
+  <label className={['pom-toggle', disabled ? 'pom-toggle--disabled' : '', className].filter(Boolean).join(' ')}>
     {(label || hint) && (
-      <span className="flex flex-col">
-        {label && <span className="text-[14px] font-medium">{label}</span>}
-        {hint && <span className="text-[12px] text-muted">{hint}</span>}
+      <span className="pom-toggle__text">
+        {label && <span className="pom-toggle__label">{label}</span>}
+        {hint && <span className="pom-toggle__hint">{hint}</span>}
       </span>
     )}
-    <span className="relative flex-none">
+    <span className="pom-toggle__control">
       <input
         type="checkbox"
+        role="switch"
+        name={name}
         checked={checked}
         defaultChecked={defaultChecked}
         disabled={disabled}
         onChange={e => onChange?.(e.target.checked)}
-        className="peer sr-only"
+        className="pom-toggle__input pom-sr-only"
       />
-      <span className="block w-[40px] h-[22px] rounded-full bg-navy-700 peer-checked:bg-cyan-400 transition-colors" />
-      <span className="absolute top-[3px] left-[3px] w-[16px] h-[16px] rounded-full bg-white transition-transform peer-checked:translate-x-[18px]" />
+      <span className="pom-toggle__track" aria-hidden="true" />
+      <span className="pom-toggle__thumb" aria-hidden="true" />
     </span>
   </label>
 )

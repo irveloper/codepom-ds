@@ -1,0 +1,96 @@
+/* @codepom/react — "blueprint" theme.
+ *
+ * Engineered drafting-table look: sharp corners, dashed rules, monospace uppercase labels,
+ * flat panels and underline form fields. Opt in by importing this file after the base styles
+ * and setting the attribute on any ancestor (usually <html>):
+ *
+ *   import '@codepom/tokens/css'
+ *   import '@codepom/react/styles'
+ *   import '@codepom/react/themes/blueprint.css'
+ *   <html data-pom-theme="blueprint">
+ *
+ * Most of the look comes from token knobs; the rules below cover what knobs can't express.
+ */
+
+[data-pom-theme="blueprint"] {
+  /* Sharp Corner Rule: everything square, a single 3px softness left in the scale. */
+  --pom-radius-sm:   0px;
+  --pom-radius-md:   0px;
+  --pom-radius-lg:   0px;
+  --pom-radius-xl:   0px;
+  --pom-radius-full: 3px;
+
+  --pom-border-style:    dashed;
+  --pom-font-label:      var(--pom-font-mono);
+  --pom-label-transform: uppercase;
+  --pom-label-tracking:  0.04em;
+
+  /* #64748B is 3.9:1 on navy-900; #6E819A is 4.7:1 and passes WCAG AA for small text. */
+  --pom-text-tertiary: #6E819A;
+}
+
+/* ── Button ───────────────────────────────────────────────────────── */
+[data-pom-theme="blueprint"] .pom-btn     { font-weight: 500; }
+[data-pom-theme="blueprint"] .pom-btn--sm { font-size: 11px; padding: 6px 14px; }
+[data-pom-theme="blueprint"] .pom-btn--md { font-size: 12px; padding: 9px 18px; }
+[data-pom-theme="blueprint"] .pom-btn--lg { font-size: 13px; padding: 11px 24px; }
+[data-pom-theme="blueprint"] .pom-btn--outline { border-style: solid; border-color: var(--pom-foreground); }
+[data-pom-theme="blueprint"] .pom-btn--outline:hover { background: var(--pom-foreground); color: var(--pom-background); border-color: var(--pom-foreground); }
+
+/* ── Badge → mono sharp label ─────────────────────────────────────── */
+[data-pom-theme="blueprint"] .pom-badge {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.06em; line-height: 1.6;
+  padding: 2px 7px; border-radius: 2px;
+}
+[data-pom-theme="blueprint"] .pom-badge--default { color: var(--pom-text-tertiary); border-color: var(--pom-border); }
+
+/* ── Card → flat panel; elevation reads as border emphasis, not shadow ── */
+[data-pom-theme="blueprint"] .pom-card { box-shadow: none; }
+[data-pom-theme="blueprint"] .pom-card--pad-sm { padding: 12px; }
+[data-pom-theme="blueprint"] .pom-card--pad-md { padding: 20px; }
+[data-pom-theme="blueprint"] .pom-card--pad-lg { padding: 28px; }
+[data-pom-theme="blueprint"] .pom-card--elevation-0 { border-color: color-mix(in srgb, var(--pom-border) 50%, transparent); }
+[data-pom-theme="blueprint"] .pom-card--elevation-3 { border-color: color-mix(in srgb, var(--pom-primary) 35%, var(--pom-border) 65%); }
+[data-pom-theme="blueprint"] .pom-card--elevation-4,
+[data-pom-theme="blueprint"] .pom-card--elevation-5 { border-color: color-mix(in srgb, var(--pom-primary) 50%, var(--pom-border) 50%); }
+[data-pom-theme="blueprint"] .pom-card--interactive:hover { transform: none; border-color: color-mix(in srgb, var(--pom-primary) 50%, var(--pom-border)); }
+
+/* ── Form → transparent underline fields ──────────────────────────── */
+[data-pom-theme="blueprint"] .pom-label {
+  font-size: 10.5px; font-weight: 400; letter-spacing: 0.07em; color: var(--pom-text-tertiary);
+}
+[data-pom-theme="blueprint"] .pom-input,
+[data-pom-theme="blueprint"] .pom-textarea,
+[data-pom-theme="blueprint"] .pom-select {
+  background: transparent; border: none; border-bottom: 1px solid var(--pom-border);
+  font-size: 15px; padding: 7px 0; box-shadow: none;
+}
+[data-pom-theme="blueprint"] .pom-select { padding-right: 24px; }
+[data-pom-theme="blueprint"] .pom-select__chevron { right: 0; }
+[data-pom-theme="blueprint"] .pom-input--has-leading  { padding-left: 26px; }
+[data-pom-theme="blueprint"] .pom-input__icon--leading { left: 0; }
+[data-pom-theme="blueprint"] .pom-input:focus,
+[data-pom-theme="blueprint"] .pom-textarea:focus,
+[data-pom-theme="blueprint"] .pom-select:focus { border-bottom-color: var(--pom-primary); box-shadow: none; }
+[data-pom-theme="blueprint"] .pom-input--error,
+[data-pom-theme="blueprint"] .pom-textarea--error,
+[data-pom-theme="blueprint"] .pom-select--error { border-bottom-color: var(--pom-error); }
+[data-pom-theme="blueprint"] .pom-field__hint,
+[data-pom-theme="blueprint"] .pom-field__error { font-family: var(--pom-font-mono); font-size: 10.5px; margin-top: 3px; }
+
+/* ── Tabs / tables ────────────────────────────────────────────────── */
+[data-pom-theme="blueprint"] .pom-tabs__tab { font-size: 12px; }
+[data-pom-theme="blueprint"] .pom-table__th { font-size: 10.5px; letter-spacing: 0.07em; }
+
+/* ── Navbar / mega menu / drawer ──────────────────────────────────── */
+[data-pom-theme="blueprint"] .pom-navbar__link    { font-size: 12px; text-transform: none; letter-spacing: 0; color: var(--pom-text-tertiary); }
+[data-pom-theme="blueprint"] .pom-navbar__trigger { font-size: 12px; letter-spacing: 0.06em; }
+[data-pom-theme="blueprint"] .pom-navbar__link:hover,
+[data-pom-theme="blueprint"] .pom-navbar__link--active { color: var(--pom-foreground); }
+[data-pom-theme="blueprint"] .pom-mega__link-icon,
+[data-pom-theme="blueprint"] .pom-drawer__link-icon { border-style: solid; }
+[data-pom-theme="blueprint"] .pom-mega__link-desc,
+[data-pom-theme="blueprint"] .pom-drawer__link-desc,
+[data-pom-theme="blueprint"] .pom-mega__feature-desc,
+[data-pom-theme="blueprint"] .pom-drawer__feature-desc,
+[data-pom-theme="blueprint"] .pom-drawer__detail-heading { color: var(--pom-text-tertiary); }

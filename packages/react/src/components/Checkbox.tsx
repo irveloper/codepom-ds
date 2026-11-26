@@ -6,25 +6,29 @@ export interface CheckboxProps {
   defaultChecked?: boolean
   onChange?: (checked: boolean) => void
   disabled?: boolean
+  name?: string
+  value?: string
   className?: string
 }
 
-export const Checkbox = ({ label, checked, defaultChecked, onChange, disabled, className }: CheckboxProps) => (
-  <label className={`flex items-center gap-[10px] cursor-pointer select-none ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className ?? ''}`}>
-    <span className="relative flex items-center justify-center w-[18px] h-[18px] flex-none">
+export const Checkbox = ({ label, checked, defaultChecked, onChange, disabled, name, value, className }: CheckboxProps) => (
+  <label className={['pom-checkbox', disabled ? 'pom-checkbox--disabled' : '', className].filter(Boolean).join(' ')}>
+    <span className="pom-checkbox__control">
       <input
         type="checkbox"
+        name={name}
+        value={value}
         checked={checked}
         defaultChecked={defaultChecked}
         disabled={disabled}
         onChange={e => onChange?.(e.target.checked)}
-        className="peer sr-only"
+        className="pom-checkbox__input pom-sr-only"
       />
-      <span className="w-[18px] h-[18px] rounded-[4px] border border-navy-700 bg-navy-900 peer-checked:bg-cyan-400 peer-checked:border-cyan-400 transition-colors" />
-      <svg className="absolute opacity-0 peer-checked:opacity-100 pointer-events-none" width="11" height="9" viewBox="0 0 11 9" fill="none">
-        <path d="M1 4l3 3 6-6" stroke="#0B132B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <span className="pom-checkbox__box" aria-hidden="true" />
+      <svg className="pom-checkbox__mark" width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true">
+        <path d="M1 4l3 3 6-6" stroke="var(--pom-navy-900)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </span>
-    {label && <span className="text-[14px]">{label}</span>}
+    {label && <span className="pom-checkbox__label">{label}</span>}
   </label>
 )

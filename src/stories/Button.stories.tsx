@@ -9,7 +9,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'ghost', 'danger'],
+      options: ['primary', 'secondary', 'outline', 'ghost', 'danger'],
     },
     size: {
       control: 'select',
@@ -33,6 +33,15 @@ export const Secondary: Story = {
 
 export const Ghost: Story = {
   args: { variant: 'ghost', size: 'md', children: 'Ghost' },
+}
+
+export const Outline: Story = {
+  args: { variant: 'outline', size: 'md', children: 'Outline' },
+}
+
+/** With `href`, Button renders an `<a>` — use it for links that should look like buttons. */
+export const AsLink: Story = {
+  args: { href: '#quote', variant: 'primary', size: 'md', children: 'Get a quote', icon: '→', iconPosition: 'right' },
 }
 
 export const Danger: Story = {
@@ -65,6 +74,7 @@ export const AllVariants: Story = {
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
       <Button variant="ghost">Ghost</Button>
+      <Button variant="outline">Outline</Button>
       <Button variant="danger">Danger</Button>
     </div>
   ),
