@@ -519,6 +519,7 @@
   background: color-mix(in srgb, var(--pom-primary) 7%, transparent); transition: background var(--pom-duration-fast);
 }
 .pom-drawer__feature:hover { background: color-mix(in srgb, var(--pom-primary) 12%, transparent); }
+.pom-drawer__feature-cta { color: var(--pom-primary); }
 .pom-drawer__feature-title { font-size: 14px; font-weight: 600; color: var(--pom-foreground); }
 .pom-drawer__feature-desc  { font-size: 12px; line-height: 1.4; color: var(--pom-text-secondary); }
 

@@ -114,7 +114,7 @@ describe('Navbar', () => {
       const dialog = screen.getByRole('dialog')
       await userEvent.click(within(dialog).getByRole('button', { name: /Services/ }))
       expect(document.querySelector('.pom-drawer__screens--detail')).toBeInTheDocument()
-      expect(onMenuOpen).toHaveBeenCalledWith(menus[0], 'mobile')
+      expect(onMenuOpen).toHaveBeenCalledWith(menus[0], 'mobile', 'click')
       expect(within(dialog).getByRole('link', { name: /MVPs/ })).toHaveAttribute('href', '/mvp')
       expect(within(dialog).getByRole('link', { name: /Get a quote/ })).toHaveAttribute('href', '/quote')
       await userEvent.click(within(dialog).getByRole('button', { name: 'Volver' }))
@@ -155,6 +155,19 @@ describe('Navbar', () => {
       expect(trigger).toHaveAttribute('aria-expanded', 'false')
     })
 
+    it('reports how a panel was opened', async () => {
+      const onMenuOpen = vi.fn()
+      render(<Navbar menus={menus} onMenuOpen={onMenuOpen} />)
+      const trigger = screen.getByRole('button', { name: 'Services' })
+      trigger.focus()
+      await userEvent.keyboard('{Enter}')
+      expect(onMenuOpen).toHaveBeenLastCalledWith(menus[0], 'desktop', 'click')
+      await userEvent.keyboard('{Escape}')
+      await userEvent.hover(trigger)
+      expect(onMenuOpen).toHaveBeenLastCalledWith(menus[0], 'desktop', 'hover')
+      expect(onMenuOpen).toHaveBeenCalledTimes(2)
+    })
+
     it('trigger click opens the panel and reports it', async () => {
       const onMenuOpen = vi.fn()
       render(<Navbar menus={menus} onMenuOpen={onMenuOpen} />)
@@ -166,7 +179,7 @@ describe('Navbar', () => {
       expect(panel).toHaveClass('pom-mega--open', 'pom-mega--has-feature')
       expect(within(panel).getByText('What we ship')).toBeInTheDocument()
       expect(within(panel).getByRole('link', { name: /Web apps/ })).toHaveAttribute('href', '/#web')
-      expect(onMenuOpen).toHaveBeenCalledWith(menus[0], 'desktop')
+      expect(onMenuOpen).toHaveBeenCalledWith(menus[0], 'desktop', 'hover')
     })
 
     it('closes on second click, Escape, and outside click', async () => {

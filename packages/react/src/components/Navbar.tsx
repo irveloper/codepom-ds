@@ -63,7 +63,8 @@ export interface NavbarProps {
   sticky?: boolean
   labels?: NavbarLabels
   getLinkProps?: (target: NavLink | NavMenuItem | NavMenuFeature, ctx: NavLinkContext) => NavAnchorProps | undefined
-  onMenuOpen?: (menu: NavMenu, source: NavSource) => void
+  /** Fires when a menu opens. `via` is 'hover' or 'click' (keyboard counts as click; mobile is always click). */
+  onMenuOpen?: (menu: NavMenu, source: NavSource, via: 'hover' | 'click') => void
   onMobileOpenChange?: (open: boolean) => void
   className?: string
 }
@@ -127,11 +128,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   const linkProps = (target: NavLink | NavMenuItem | NavMenuFeature, ctx: NavLinkContext) =>
     getLinkProps?.(target, ctx) ?? {}
 
-  const openDesktopMenu = (index: number) => {
-    setOpenMenu((prev) => {
-      if (prev !== index) onMenuOpen?.(menus[index], 'desktop')
-      return index
-    })
+  const openDesktopMenu = (index: number, via: 'hover' | 'click') => {
+    if (openMenu !== index) onMenuOpen?.(menus[index], 'desktop', via)
+    setOpenMenu(index)
   }
 
   const cancelClose = () => {
@@ -264,7 +263,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onMouseEnter={() => {
                       cancelClose()
                       if (openMenu !== i) openedByHover.current = true
-                      openDesktopMenu(i)
+                      openDesktopMenu(i, 'hover')
                     }}
                     onMouseLeave={scheduleClose}
                   >
@@ -280,7 +279,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         }
                         openedByHover.current = false
                         if (isOpen) setOpenMenu(null)
-                        else openDesktopMenu(i)
+                        else openDesktopMenu(i, 'click')
                       }}
                     >
                       {menu.label}
@@ -393,7 +392,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       aria-controls={`${uid}-drawer-menu-${i}`}
                       onClick={() => {
                         setMobileMenu(i)
-                        onMenuOpen?.(menu, 'mobile')
+                        onMenuOpen?.(menu, 'mobile', 'click')
                       }}
                     >
                       {menu.eyebrow && <span className="pom-drawer__eyebrow">{menu.eyebrow}</span>}
