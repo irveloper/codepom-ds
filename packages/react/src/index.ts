@@ -1,5 +1,5 @@
 export { Button } from './components/Button'
-export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button'
+export type { ButtonProps, ButtonAsButtonProps, ButtonAsLinkProps, ButtonVariant, ButtonSize } from './components/Button'
 
 export { Badge } from './components/Badge'
 export type { BadgeProps, BadgeVariant, BadgeSize } from './components/Badge'
@@ -41,7 +41,17 @@ export { Skeleton, SkeletonCard, SkeletonText } from './components/Skeleton'
 export type { SkeletonProps } from './components/Skeleton'
 
 export { Navbar } from './components/Navbar'
-export type { NavbarProps, NavLink } from './components/Navbar'
+export type {
+  NavbarProps,
+  NavbarLabels,
+  NavLink,
+  NavMenu,
+  NavMenuItem,
+  NavMenuFeature,
+  NavSource,
+  NavLinkContext,
+  NavAnchorProps,
+} from './components/Navbar'
 
 export { Sidebar } from './components/Sidebar'
 export type { SidebarProps, SidebarLink, SidebarChildLink } from './components/Sidebar'

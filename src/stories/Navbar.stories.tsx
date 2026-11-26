@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Navbar, Button, Badge } from '../../packages/react/src'
+import { Navbar, Button, Badge, Icon } from '../../packages/react/src'
 
 const meta: Meta<typeof Navbar> = {
   title: 'Navigation/Navbar',
@@ -76,6 +76,52 @@ export const LogoOnly: Story = {
   render: () => (
     <div style={{ background: '#0B132B', minHeight: '100vh' }}>
       <Navbar logo={<Logo />} />
+    </div>
+  ),
+}
+
+const megaMenus = [
+  {
+    label: 'Services',
+    eyebrow: '01 / Build',
+    heading: 'Products we design, build and run',
+    items: [
+      { label: 'Web apps', href: '#web', description: 'Full-stack products on a modern stack', icon: <Icon name="terminal" size={18} /> },
+      { label: 'MVP builds', href: '#mvp', description: 'From idea to paying users in weeks', icon: <Icon name="agility" size={18} /> },
+      { label: 'Integrations', href: '#api', description: 'APIs, payments and data pipelines', icon: <Icon name="cloud" size={18} /> },
+    ],
+    feature: {
+      eyebrow: 'Fixed scope',
+      title: 'Get a quote in 2 minutes',
+      description: 'Pick what you need and see the estimate live.',
+      cta: 'Start',
+      ctaIcon: <Icon name="plus" size={12} />,
+      href: '#quote',
+    },
+  },
+  {
+    label: 'Company',
+    eyebrow: '02 / Us',
+    heading: 'Who builds it',
+    items: [
+      { label: 'Case studies', href: '#work', description: 'Shipped, current projects' },
+      { label: 'Process', href: '#process', description: 'How a build runs, week by week' },
+    ],
+  },
+]
+
+/** Mega-menu triggers on desktop; on narrow screens the hamburger opens a drawer with drill-down screens. */
+export const MegaMenu: Story = {
+  render: () => (
+    <div style={{ background: 'var(--pom-background)', minHeight: '100vh' }}>
+      <Navbar
+        sticky
+        logo={<Logo />}
+        links={[{ label: 'Pricing', href: '#pricing' }]}
+        menus={megaMenus}
+        labels={{ back: 'Back' }}
+        actions={<Button href="#quote" variant="outline" size="sm">Book a call</Button>}
+      />
     </div>
   ),
 }
