@@ -2,7 +2,7 @@ import React from 'react'
 
 export type CardElevation = 0 | 1 | 2 | 3 | 4 | 5
 
-export interface CardProps {
+export interface CardProps extends React.HTMLAttributes<HTMLElement> {
   elevation?: CardElevation
   padding?: 'none' | 'sm' | 'md' | 'lg'
   interactive?: boolean
@@ -33,6 +33,7 @@ export const Card: React.FC<CardProps> = ({
   children,
   className = '',
   as: Component = 'div',
+  ...rest
 }) => {
   const classes = [
     'pom-card',
@@ -44,7 +45,11 @@ export const Card: React.FC<CardProps> = ({
     .filter(Boolean)
     .join(' ')
 
-  return <Component className={classes}>{children}</Component>
+  return (
+    <Component {...rest} className={classes}>
+      {children}
+    </Component>
+  )
 }
 
 export const CardHeader: React.FC<CardHeaderProps> = ({ children, className = '' }) => (

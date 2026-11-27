@@ -104,11 +104,14 @@ function Page() {
 | `Badge` | Inline status labels with 7 variants |
 | `Alert` | Info, success, warning, error banners |
 | `Avatar` | User avatars with status indicators and size options |
-| `Card` / `CardHeader` / `CardBody` / `CardFooter` | Composable card layout |
+| `Card` / `CardHeader` / `CardBody` / `CardFooter` | Composable card layout; forwards HTML attributes |
 | `Input` / `Textarea` / `Select` / `Label` / `Field` | Form controls with label and hint support |
 | `Checkbox` | Controlled/uncontrolled checkbox |
 | `Radio` | Controlled/uncontrolled radio button |
 | `Toggle` | On/off toggle switch |
+| `Accordion` | Disclosure list — single or multiple open, numbered, chevron or plus icon |
+| `Chip` / `ChipGroup` | Toggle chips; single-select radio group or multi-select group |
+| `Carousel` | Scroll-snap carousel; controls appear only when slides overflow |
 | `Modal` | Accessible `<dialog>`-based modal with sizes |
 | `Tabs` | Underline, pill and boxed tab variants |
 | `Tooltip` | Hover tooltip with placement options |

@@ -82,3 +82,19 @@ export type { RadioProps } from './components/Radio'
 
 export { Toggle } from './components/Toggle'
 export type { ToggleProps } from './components/Toggle'
+
+export { Accordion } from './components/Accordion'
+export type { AccordionProps, AccordionItem, AccordionIcon } from './components/Accordion'
+
+export { Chip, ChipGroup } from './components/Chip'
+export type {
+  ChipProps,
+  ChipSize,
+  ChipOption,
+  ChipGroupProps,
+  ChipGroupSingleProps,
+  ChipGroupMultipleProps,
+} from './components/Chip'
+
+export { Carousel } from './components/Carousel'
+export type { CarouselProps } from './components/Carousel'

@@ -62,4 +62,16 @@ describe('CardFooter', () => {
     expect(screen.getByText('Footer')).toBeInTheDocument()
     expect(document.querySelector('.pom-card__footer')).toBeInTheDocument()
   })
+
+  it('passes through HTML attributes like style and data-*', () => {
+    render(
+      <Card style={{ transitionDelay: '70ms' }} data-testid="c" id="card-1">
+        x
+      </Card>
+    )
+    const card = screen.getByTestId('c')
+    expect(card).toHaveAttribute('id', 'card-1')
+    expect(card.style.transitionDelay).toBe('70ms')
+    expect(card).toHaveClass('pom-card')
+  })
 })
