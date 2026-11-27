@@ -29,7 +29,7 @@ describe('Heading', () => {
   })
 
   it('forwards ref, className and attributes', () => {
-    const ref = React.createRef<HTMLHeadingElement>()
+    const ref = React.createRef<HTMLElement>()
     render(<Heading ref={ref} level={4} className="x" id="h4">h</Heading>)
     expect(ref.current?.tagName).toBe('H4')
     expect(ref.current).toHaveClass('x')
@@ -61,6 +61,21 @@ describe('Text', () => {
     const el = screen.getByText('c')
     expect(el.tagName).toBe('SPAN')
     expect(el).toHaveClass('pom-text--tone-accent')
+  })
+})
+
+describe('polymorphic `as`', () => {
+  it('accepts element-specific attributes', () => {
+    render(
+      <>
+        <Text as="a" href="/terms" variant="small">Terms</Text>
+        <Text as="button" type="button" variant="body">Prefs</Text>
+        <Eyebrow as="label" htmlFor="f-name">Name</Eyebrow>
+      </>
+    )
+    expect(screen.getByRole('link', { name: 'Terms' })).toHaveAttribute('href', '/terms')
+    expect(screen.getByRole('button', { name: 'Prefs' })).toHaveAttribute('type', 'button')
+    expect(screen.getByText('Name')).toHaveAttribute('for', 'f-name')
   })
 })
 

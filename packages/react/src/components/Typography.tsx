@@ -13,7 +13,10 @@ const cx = (...c: (string | false | undefined)[]) => c.filter(Boolean).join(' ')
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6
 
-export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
+/** Element-specific attributes (href, type, htmlFor, …) are accepted for use with `as`. */
+type AnyElementProps = Omit<React.AllHTMLAttributes<HTMLElement>, 'size' | 'as'>
+
+export interface HeadingProps extends AnyElementProps {
   /** Document outline level (h1–h6). */
   level?: Level
   /** Visual role. Defaults by level: 1 → page, 2 → title, 3+ → item. */
@@ -25,7 +28,7 @@ export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 
 const sizeForLevel = (level: Level): HeadingSize => (level === 1 ? 'page' : level === 2 ? 'title' : 'item')
 
-export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
+export const Heading = React.forwardRef<HTMLElement, HeadingProps>(
   ({ level = 2, size, tone = 'default', as, className = '', children, ...rest }, ref) => {
     const Component = (as ?? `h${level}`) as React.ElementType
     return (
@@ -41,7 +44,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
 )
 Heading.displayName = 'Heading'
 
-export interface TextProps extends React.HTMLAttributes<HTMLElement> {
+export interface TextProps extends AnyElementProps {
   variant?: TextVariant
   /** Defaults: lead/body → secondary, small/caption → tertiary, mono/stat → inherit. */
   tone?: TextTone
@@ -70,7 +73,7 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 )
 Text.displayName = 'Text'
 
-export interface LabelTextProps extends React.HTMLAttributes<HTMLElement> {
+export interface LabelTextProps extends AnyElementProps {
   /** md: 11px medium (section kickers); sm: 10.5px regular (field and group labels). */
   size?: LabelSize
   tone?: TextTone
