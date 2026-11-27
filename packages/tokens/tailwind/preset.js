@@ -18,6 +18,19 @@ const preset = {
         primary:     '#FBB040',
         accent:      '#00DFFF',
       },
+      // Type roles — same values as --pom-type-* in tokens.css (see Heading / Text / Label).
+      fontSize: {
+        page:    ['var(--pom-type-page-size, clamp(36px, 4.5vw, 64px))', { lineHeight: 'var(--pom-type-page-leading, 1.02)', letterSpacing: 'var(--pom-type-page-tracking, -0.03em)', fontWeight: '500' }],
+        title:   ['var(--pom-type-title-size, 20px)', { lineHeight: 'var(--pom-type-title-leading, 1.3)', letterSpacing: 'var(--pom-type-title-tracking, -0.02em)', fontWeight: '600' }],
+        item:    ['var(--pom-type-item-size, 15px)', { lineHeight: 'var(--pom-type-item-leading, 1.5)', fontWeight: '500' }],
+        stat:    ['var(--pom-type-stat-size, 28px)', { lineHeight: 'var(--pom-type-stat-leading, 1)', letterSpacing: 'var(--pom-type-stat-tracking, -0.025em)', fontWeight: '600' }],
+        lead:    ['var(--pom-type-lead-size, 19px)', { lineHeight: 'var(--pom-type-lead-leading, 1.5)' }],
+        body:    ['var(--pom-type-body-size, 15px)', { lineHeight: 'var(--pom-type-body-leading, 1.6)' }],
+        small:   ['var(--pom-type-small-size, 11.5px)', { lineHeight: 'var(--pom-type-small-leading, 1.4)' }],
+        label:   ['var(--pom-type-label-size, 11px)', { lineHeight: 'var(--pom-type-label-leading, 1.5)', letterSpacing: 'var(--pom-type-label-tracking, 0.06em)', fontWeight: '500' }],
+        caption: ['var(--pom-type-caption-size, 10.5px)', { lineHeight: 'var(--pom-type-caption-leading, 1.5)' }],
+        mono:    ['var(--pom-type-mono-size, 12px)', { lineHeight: 'var(--pom-type-mono-leading, 1.55)' }],
+      },
       fontFamily: {
         sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         mono: ['"Space Mono"', '"Courier New"', 'monospace'],

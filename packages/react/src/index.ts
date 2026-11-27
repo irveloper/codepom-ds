@@ -98,3 +98,14 @@ export type {
 
 export { Carousel } from './components/Carousel'
 export type { CarouselProps } from './components/Carousel'
+
+export { Heading, Text, Eyebrow } from './components/Typography'
+export type {
+  HeadingProps,
+  HeadingSize,
+  TextProps,
+  TextVariant,
+  TextTone,
+  LabelTextProps,
+  LabelSize,
+} from './components/Typography'
