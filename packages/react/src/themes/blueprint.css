@@ -78,6 +78,17 @@
 [data-pom-theme="blueprint"] .pom-field__hint,
 [data-pom-theme="blueprint"] .pom-field__error { font-family: var(--pom-font-mono); font-size: 10.5px; margin-top: 3px; }
 
+/* ── Accordion: larger display titles, rotating plus ──────────────── */
+[data-pom-theme="blueprint"] .pom-accordion__trigger { padding: 22px 0; font-size: 19px; }
+[data-pom-theme="blueprint"] .pom-accordion__content { color: var(--pom-text-secondary); }
+
+/* ── Chip → square mono tag ───────────────────────────────────────── */
+[data-pom-theme="blueprint"] .pom-chip { border-radius: 0; border-color: var(--pom-border); color: var(--pom-text-tertiary); }
+[data-pom-theme="blueprint"] .pom-chip--sm,
+[data-pom-theme="blueprint"] .pom-chip--md { font-size: 10.5px; padding: 4px 12px; letter-spacing: 0.05em; }
+[data-pom-theme="blueprint"] .pom-chip:hover:not(.pom-chip--selected):not(:disabled) { color: var(--pom-text-secondary); border-color: var(--pom-secondary); }
+[data-pom-theme="blueprint"] .pom-chip--selected { color: var(--pom-primary); border-color: color-mix(in srgb, var(--pom-primary) 40%, transparent); background: color-mix(in srgb, var(--pom-primary) 8%, transparent); }
+
 /* ── Tabs / tables ────────────────────────────────────────────────── */
 [data-pom-theme="blueprint"] .pom-tabs__tab { font-size: 12px; }
 [data-pom-theme="blueprint"] .pom-table__th { font-size: 10.5px; letter-spacing: 0.07em; }
