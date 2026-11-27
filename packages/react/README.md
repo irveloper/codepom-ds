@@ -109,6 +109,7 @@ function Page() {
 | `Checkbox` | Controlled/uncontrolled checkbox |
 | `Radio` | Controlled/uncontrolled radio button |
 | `Toggle` | On/off toggle switch |
+| `Heading` / `Text` / `Eyebrow` | Type scale — page, title, item, stat, lead, body, small, caption, mono roles and mono uppercase kickers |
 | `Accordion` | Disclosure list — single or multiple open, numbered, chevron or plus icon |
 | `Chip` / `ChipGroup` | Toggle chips; single-select radio group or multi-select group |
 | `Carousel` | Scroll-snap carousel; controls appear only when slides overflow |
